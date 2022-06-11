@@ -1,1 +1,1 @@
-# auth_soloProject
+# Hipsail
