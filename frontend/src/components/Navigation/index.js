@@ -15,8 +15,8 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <NavLink className="loginBtn" to="/login">Log in</NavLink>
+        <NavLink className="signupBtn" to="/signup">Sign up</NavLink>
       </>
     );
   }
@@ -24,10 +24,11 @@ function Navigation({ isLoaded }){
   return (
     <div className='nav-container'>
       <div className='navLeft-container'>
-        <img className='logoNav' src='./hipsail_logo.png' alt="logo"></img>
+        <NavLink exact to="/">
+          <img className='logoNav' src='./hipsail_logo.png' alt="logo"></img>
+        </NavLink>
       </div>
       <div className='navRight-container'>
-        <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
       </div>
     </div>
