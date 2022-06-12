@@ -43,6 +43,7 @@ function LoginFormPage() {
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
+          placeholder='Username or Email'
         />
       </label>
       <label>
@@ -52,6 +53,7 @@ function LoginFormPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          placeholder='Password'
         />
       </label>
       <button type="submit">Log In</button>
