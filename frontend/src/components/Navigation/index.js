@@ -15,8 +15,12 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
+        <NavLink className="navBtn" to="/login">Near Me</NavLink>
+        <NavLink className="navBtn" to="/login">About</NavLink>
+        <NavLink className="navBtn" to="/login">Earn Hipcash</NavLink>
         <NavLink className="loginBtn" to="/login">Log in</NavLink>
         <NavLink className="signupBtn" to="/signup">Sign up</NavLink>
+        <button className="hostBtn" type="Submit">Start Hosting</button>
       </>
     );
   }
