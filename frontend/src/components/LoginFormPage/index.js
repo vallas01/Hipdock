@@ -26,7 +26,7 @@ function LoginFormPage() {
       });
   }
 
-  const handleDemo = () => {
+  const handleDemo = (e) => {
     e.preventDefault();
     setCredential('Demo-lition');
     setPassword('password');
