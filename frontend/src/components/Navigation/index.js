@@ -23,11 +23,13 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='nav-container'>
-
-        <img className='logo' src='./hipsail_logo.png' alt="logo"></img>
+      <div className='navLeft-container'>
+        <img className='logoNav' src='./hipsail_logo.png' alt="logo"></img>
+      </div>
+      <div className='navRight-container'>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
-
+      </div>
     </div>
   );
 }
