@@ -26,13 +26,20 @@
     font-family: Calibre, Helvetica, Arial, sans-serif;
 }
 
-.loginBtn, .signupBtn, .navBtn {
+.loginBtn, .signupBtn, .navBtn, .aboutBtn {
     padding: 6px 12px;
     color: rgb(40, 64, 12);
     text-decoration: none;
 }
 
-.loginBtn:hover, .signupBtn:hover, .navBtn:hover {
+.aboutBtn {
+    border: none;
+    width: 120px;
+    font-size: 1rem;
+    padding-top: 8px ;
+}
+
+.loginBtn:hover, .signupBtn:hover, .navBtn:hover, .aboutBtn:hover {
     text-decoration: underline;
     text-decoration-color: rgb(0, 197, 133);
 }
@@ -56,11 +63,14 @@
     border: 1px solid rgb(0, 207, 152);
 }
 
+
+/* TODO Add <a> elements or remove CSS and div for navbar*/
 .navbar {
     overflow: hidden;
     /* background-color: #333; */
 }
 
+/* TODO Add <a> elements or remove CSS and div for navbar*/
 .navbar a {
     float: left;
     font-size: .9rem;
@@ -69,6 +79,7 @@
     padding: 14px 16px;
     text-decoration: none;
 }
+
 
 .dropdown {
     float: left;
@@ -79,7 +90,7 @@
     border: none;
     outline: none;
     padding: 0px 16px;
-    background-color: inherit;
+    background-color: #f3f2ef;
 }
 
 
@@ -88,18 +99,17 @@ display: none;
 position: absolute;
 min-width: 140px;
 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
 }
 
 .dropdown-content a {
 float: none;
 color: black;
-padding: 12px 16px;
+padding: 8px 16px;
 text-decoration: none;
 display: block;
 text-align: left;
 border: 1px solid rgba(0,0,0,.1);
-transition: 1s;
+background-color: #f3f2ef;
 }
 
 .dropdown-content a:hover {

@@ -1,0 +1,22 @@
+.headingOne, .headingTwo, .aboutP {
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+}
+
+.headingOne {
+    margin-top: 80px;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.headingTwo {
+    margin: 20px 0px;
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+
+.aboutP {
+    text-align: center;
+    margin: 0px 200px;
+}

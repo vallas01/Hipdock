@@ -44,7 +44,19 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <NavLink className="navBtn" to="/login">Near Me</NavLink>
-        <NavLink className="navBtn" to="/login">About</NavLink>
+
+        <div className="dropdown">
+              <button class="aboutBtn">
+                About
+              </button>
+              <div class="dropdown-content">
+                <a href="/about">About me</a>
+                <a href="/">My values</a>
+                <a href="/">Career</a>
+                <a href="/">Contact info</a>
+              </div>
+        </div>
+
         <NavLink className="navBtn" to="/login">Earn Hipcash</NavLink>
         <NavLink className="loginBtn" to="/login">Log in</NavLink>
         <NavLink className="signupBtn" to="/signup">Sign up</NavLink>
