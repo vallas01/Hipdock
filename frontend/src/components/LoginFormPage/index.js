@@ -44,6 +44,7 @@ function LoginFormPage() {
           onChange={(e) => setCredential(e.target.value)}
           required
           placeholder='Username or Email'
+          autoComplete='off'
         />
       </label>
       <label>
@@ -54,6 +55,7 @@ function LoginFormPage() {
           onChange={(e) => setPassword(e.target.value)}
           required
           placeholder='Password'
+          autoComplete='off'
         />
       </label>
       <button type="submit">Log In</button>
