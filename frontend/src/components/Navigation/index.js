@@ -32,9 +32,9 @@ function Navigation({ isLoaded }){
               <img className='logout' src='./favicon.png' alt="logo"></img>
               </button>
               <div class="dropdown-content">
+                <a href="/">Account</a>
+                <a href="/">About</a>
                 <a onClick={logout} href='/'>Log out</a>
-                <a href="/">Link 2</a>
-                <a href="/">Link 3</a>
               </div>
           </div>
         </div>
