@@ -22,12 +22,13 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul>
-      <li>
+    <div className='nav-container'>
+
+        <img className='logo' src='./HIPSAIL.png' alt="logo"></img>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+
+    </div>
   );
 }
 

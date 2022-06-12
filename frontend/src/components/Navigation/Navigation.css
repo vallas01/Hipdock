@@ -1,0 +1,9 @@
+.nav-container {
+    margin:  10px;
+    display: inline-block;
+    width: 80%;
+}
+
+.logo {
+    width: 100px;
+}
