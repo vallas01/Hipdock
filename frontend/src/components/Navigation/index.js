@@ -24,7 +24,7 @@ function Navigation({ isLoaded }){
   return (
     <div className='nav-container'>
 
-        <img className='logo' src='./HIPSAIL.png' alt="logo"></img>
+        <img className='logo' src='./hipsail_logo.png' alt="logo"></img>
         <NavLink exact to="/">Home</NavLink>
         {isLoaded && sessionLinks}
 
