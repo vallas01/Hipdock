@@ -41,6 +41,7 @@ function SignupFormPage() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          autoComplete="new-email"
         />
       </label>
       <label>
@@ -50,6 +51,7 @@ function SignupFormPage() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
+          autoComplete="new-username"
         />
       </label>
       <label>
@@ -59,6 +61,7 @@ function SignupFormPage() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          autoComplete="new-password"
         />
       </label>
       <label>
@@ -68,6 +71,7 @@ function SignupFormPage() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           required
+          autoComplete="new-password"
         />
       </label>
       <button type="submit">Sign Up</button>
