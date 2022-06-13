@@ -1,8 +1,30 @@
-.tech-div {
+.tech-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .fa-brands, .fa-solid {
     margin: 20px;
+}
+
+.developer-link, .heroku-link {
+    font-size: 1.1rem;
+    padding: 6px 12px;
+    color: rgb(40, 64, 12);
+    text-decoration: none;
+}
+
+.developer-link:hover, .heroku-link:hover{
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 197, 133);
+}
+
+.heroku {
+    width: 45px;
+}
+
+.heroku-link {
+    position: relative;
+    bottom: 25px;
 }
