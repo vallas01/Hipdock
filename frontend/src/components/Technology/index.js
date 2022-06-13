@@ -41,7 +41,7 @@ const Technology = () => {
                     <a className="developer-link" href='https://expressjs.com/en/api.html' >Express</a>
                 </div>
                 <div className='tech tech-heroku'>
-                    <img className='heroku' src='./heroku.png' alt="logo"></img>
+                    <img className='heroku' src='./heroku-logo.png' alt="logo"></img>
                     <a className="heroku-link" href='https://www.heroku.com/' >Heroku</a>
                 </div>
             </div>
