@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import About from "./components/About";
+import Technology from "./components/Technology";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +29,10 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
+          <Route path="/technology">
+            <Technology />
+          </Route>
+
 
         </Switch>
       )}

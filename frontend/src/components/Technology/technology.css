@@ -1,0 +1,8 @@
+.tech-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-brands, .fa-solid {
+    margin: 20px;
+}

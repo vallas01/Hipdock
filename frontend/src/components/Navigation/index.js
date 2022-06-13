@@ -33,7 +33,7 @@ function Navigation({ isLoaded }){
               </button>
               <div class="dropdown-content">
                 <a href="/">Account</a>
-                <a href="/">About</a>
+                <a href="/about">About</a>
                 <a onClick={logout} href='/'>Log out</a>
               </div>
           </div>
@@ -52,6 +52,7 @@ function Navigation({ isLoaded }){
               <div class="dropdown-content">
                 <a href="/about">About me</a>
                 <a href="/">My values</a>
+                <a href="/technology">Technologies</a>
                 <a href="/">Career</a>
                 <a href="/">Contact info</a>
               </div>
