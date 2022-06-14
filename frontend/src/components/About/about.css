@@ -20,3 +20,14 @@
     text-align: center;
     margin: 0px 200px 20px 200px;
 }
+
+.aboutMe, .aboutMe p, .aboutLinks {
+    text-align: center;
+    margin: 0px 200px 0px 200px;
+    border: 0px;
+}
+.aboutImage {
+    width: 10%;
+    border-radius: 15%;
+    margin: 1px;
+}

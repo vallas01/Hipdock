@@ -51,9 +51,10 @@ function Navigation({ isLoaded }){
               </button>
               <div class="dropdown-content">
                 <a href="/about">About me</a>
-                <a href="/">My values</a>
+                {/* TODO Add a page listing your values */}
+                {/* <a href="/">My values</a> */}
                 <a href="/technology">Technologies</a>
-                <a href="/">Career</a>
+                <a href="/">About this app</a>
                 <a href="/">Contact info</a>
               </div>
         </div>
