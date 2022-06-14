@@ -63,24 +63,6 @@
     border: 1px solid rgb(0, 207, 152);
 }
 
-
-/* TODO Add <a> elements or remove CSS and div for navbar*/
-.navbar {
-    overflow: hidden;
-    /* background-color: #333; */
-}
-
-/* TODO Add <a> elements or remove CSS and div for navbar*/
-/* .navbar a {
-    float: left;
-    font-size: 1rem;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-} */
-
-
 .dropdown {
     float: left;
     overflow: hidden;
@@ -97,7 +79,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    min-width: 140px;
+    min-width: 180px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 

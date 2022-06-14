@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-// import ProfileButton from './ProfileButton';
 
 import * as sessionActions from '../../store/session';
 
@@ -27,22 +26,19 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      // <ProfileButton user={sessionUser} />
       <>
-        {/* <button onClick={logout}>
-                <img className='logout' src='./favicon.png' alt="logo"></img>
-        </button> */}
-        <div class="navbar">
-          <div className="dropdown">
-              <button id="logout" class="dropbtn">
-                <img className='logout' src='./favicon.png' alt="logo"></img>
-              </button>
-              <div class="dropdown-content">
-                <a href="/">Account</a>
-                <a href="/about">About</a>
-                <a onClick={logout} href='/'>Log out</a>
-              </div>
-          </div>
+        <NavLink className="navBtn" to="/login">Trips</NavLink>
+        <NavLink className="navBtn" to="/login">Saves</NavLink>
+
+        <div className="dropdown">
+            <button id="logout" class="dropbtn">
+              <img className='logout' src='./favicon.png' alt="logo"></img>
+            </button>
+            <div class="dropdown-content">
+              <a href="/">Account</a>
+              <a href="/about">About</a>
+              <a onClick={logout} href='/'>Log out</a>
+            </div>
         </div>
       </>
     );
@@ -52,7 +48,7 @@ function Navigation({ isLoaded }){
         <NavLink className="navBtn" to="/login">Near Me</NavLink>
 
         <div className="dropdown">
-              <button id="aboutBtn" class="aboutBtn">
+              <button class="aboutBtn">
                 About
               </button>
               <div class="dropdown-content">
@@ -65,7 +61,7 @@ function Navigation({ isLoaded }){
               </div>
         </div>
 
-        <NavLink className="navBtn" to="/login">Earn Hipcash</NavLink>
+        <NavLink className="navBtn" to="/hipcash">Earn Hipcash</NavLink>
         <NavLink className="loginBtn" to="/login">Log in</NavLink>
         <NavLink className="signupBtn" to="/signup">Sign up</NavLink>
         <button className="hostBtn" type="Submit">Start Hosting</button>

@@ -7,6 +7,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import About from "./components/About";
 import Technology from "./components/Technology";
+import Hipcash from "./components/Hipcash";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,8 +33,9 @@ function App() {
           <Route path="/technology">
             <Technology />
           </Route>
-
-
+          <Route path="/hipcash">
+            <Hipcash />
+          </Route>
         </Switch>
       )}
     </>
