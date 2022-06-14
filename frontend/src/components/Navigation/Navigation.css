@@ -1,11 +1,11 @@
 .nav-container {
-    margin:  22px 84px 0px 84px;
+    margin:  22px 80px 0px 80px;
     display: flex;
     justify-content: space-between;
 }
 
 .navLeft-container {
-    padding-top: 8px;
+    padding-top: 4px;
 }
 
 .navRight-container{
@@ -14,7 +14,7 @@
 }
 
 .logoNav {
-    width: 110px;
+    width: 140px;
     cursor: url(../../../public/hipsail_pointer.png), pointer;
 }
 

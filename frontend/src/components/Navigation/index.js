@@ -73,7 +73,7 @@ function Navigation({ isLoaded }){
     <div className='nav-container'>
       <div className='navLeft-container'>
         <NavLink exact to="/">
-          <img className='logoNav' src='./hipsail_logo.png' alt="logo"></img>
+          <img className='logoNav' src='./hipdock.png' alt="logo"></img>
         </NavLink>
       </div>
       <div className='navRight-container'>
