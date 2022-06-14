@@ -9,6 +9,7 @@ import About from "./components/Navigation/About";
 import Technology from "./components/Navigation/Technology";
 import Hipcash from "./components/Navigation/Hipcash";
 import ElevatorPitch from "./components/Navigation/ElevatorPitch";
+import Contact from "./components/Navigation/Contact";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,7 +41,9 @@ function App() {
           <Route path="/elevator">
             <ElevatorPitch />
           </Route>
-
+          <Route path="/contact">
+            <Contact />
+          </Route>
         </Switch>
       )}
     </>

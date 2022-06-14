@@ -57,7 +57,7 @@ function Navigation({ isLoaded }){
                 {/* <a href="/">My values</a> */}
                 <a href="/technology">Technologies</a>
                 <a href="/elevator">Elevator Pitch</a>
-                <a href="/">Contact info</a>
+                <a href="/contact">Contact info</a>
               </div>
         </div>
 

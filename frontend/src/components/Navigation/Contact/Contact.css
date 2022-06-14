@@ -1,4 +1,4 @@
-.eleHeadOne, .eleHeadTwo {
+.conHeadOne, .conHeadTwo {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -10,14 +10,14 @@
     z-index: 0;
 }
 
-.eleHeadOne {
+.conHeadOne {
     margin-top: 80px;
     font-size: .9rem;
     font-weight: bold;
 }
 
-.eleHeadTwo {
-    margin: 2% 15%;
+.conHeadTwo {
+    margin: 2% 25%;
     font-size: 2.2rem;
     font-weight: bolder;
 }

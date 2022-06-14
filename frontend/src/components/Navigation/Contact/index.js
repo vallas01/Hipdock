@@ -1,10 +1,10 @@
-import './ElevatorPitch.css'
+import './Contact.css'
 
-const ElevatorPitch = () => {
+const Contact = () => {
     return (
-        <div className='elevator-outer-container'>
-            <div className='eleHeadOne'>AN ELEVATOR PITCH</div>
-            <div className='eleHeadTwo'>An app that helps unite the boating community by connecting boaters with home owners and businesses willing to share a dock.</div>
+        <div className='contact-outer-container'>
+            <div className='conHeadOne'>CONTACT INFO</div>
+            <div className='conHeadTwo'>Please permit me to present myself as a candidate for your firm.</div>
             <div className='aboutP'><p>&nbsp; &nbsp;Add your pitch here...</p></div>
             <div className='aboutP'><p>&nbsp; &nbsp;Add your pitch here...</p></div>
             <div className='aboutP'><p>&nbsp; &nbsp;Add your pitch here...</p></div>
@@ -27,4 +27,4 @@ const ElevatorPitch = () => {
     )
 }
 
-export default ElevatorPitch;
+export default Contact;
