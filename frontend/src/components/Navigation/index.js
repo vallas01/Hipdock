@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 // import ProfileButton from './ProfileButton';
@@ -18,6 +18,12 @@ function Navigation({ isLoaded }){
     dispatch(sessionActions.logout());
   };
 
+
+  const audio = new Audio('./ships_bell.wav');
+  useEffect(()=>{
+    audio.play()
+  })
+
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
@@ -28,8 +34,8 @@ function Navigation({ isLoaded }){
         </button> */}
         <div class="navbar">
           <div className="dropdown">
-              <button class="dropbtn">
-              <img className='logout' src='./favicon.png' alt="logo"></img>
+              <button id="logout" class="dropbtn">
+                <img className='logout' src='./favicon.png' alt="logo"></img>
               </button>
               <div class="dropdown-content">
                 <a href="/">Account</a>
@@ -46,7 +52,7 @@ function Navigation({ isLoaded }){
         <NavLink className="navBtn" to="/login">Near Me</NavLink>
 
         <div className="dropdown">
-              <button class="aboutBtn">
+              <button id="aboutBtn" class="aboutBtn">
                 About
               </button>
               <div class="dropdown-content">
