@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import About from "./components/Navigation/About";
 import Technology from "./components/Navigation/Technology";
 import Hipcash from "./components/Navigation/Hipcash";
+import ElevatorPitch from "./components/Navigation/ElevatorPitch";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,10 @@ function App() {
           <Route path="/hipcash">
             <Hipcash />
           </Route>
+          <Route path="/elevator">
+            <ElevatorPitch />
+          </Route>
+
         </Switch>
       )}
     </>

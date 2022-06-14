@@ -56,7 +56,7 @@ function Navigation({ isLoaded }){
                 {/* TODO Add a page listing your values */}
                 {/* <a href="/">My values</a> */}
                 <a href="/technology">Technologies</a>
-                <a href="/">Elevator Pitch</a>
+                <a href="/elevator">Elevator Pitch</a>
                 <a href="/">Contact info</a>
               </div>
         </div>
