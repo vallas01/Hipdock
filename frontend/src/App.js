@@ -5,9 +5,9 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
-import About from "./components/About";
-import Technology from "./components/Technology";
-import Hipcash from "./components/Hipcash";
+import About from "./components/Navigation/About";
+import Technology from "./components/Navigation/Technology";
+import Hipcash from "./components/Navigation/Hipcash";
 
 function App() {
   const dispatch = useDispatch();
