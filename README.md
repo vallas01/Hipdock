@@ -1,4 +1,4 @@
-# Hipsail - App Academy Solo Project
+# Hipdock - App Academy Solo Project
 
 Written by Andrew C Vallas
 
