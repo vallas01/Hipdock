@@ -11,6 +11,7 @@ import Hipcash from "./components/Navigation/Hipcash";
 import ElevatorPitch from "./components/Navigation/ElevatorPitch";
 import Contact from "./components/Navigation/Contact";
 import NearMe from "./components/NearMe";
+import Splash from "./components/Navigation/Splash";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,10 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+
+          <Route exact path="/">
+            <Splash />
+          </Route>
           <Route path="/login">
             <LoginFormPage />
           </Route>

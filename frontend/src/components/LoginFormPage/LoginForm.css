@@ -1,0 +1,19 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+  }
+
+
+  .login-form {
+      height: 350px;
+      width: 350px;
+      padding: 19px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border: 1px solid #ebebeb;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
