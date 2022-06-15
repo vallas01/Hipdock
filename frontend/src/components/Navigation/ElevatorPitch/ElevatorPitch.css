@@ -4,7 +4,7 @@
     text-align: center;
 }
 
-.headingOne, .headingTwo, .aboutP {
+.eleHeadOne, .eleHeadTwo, .eleHeadThree, .aboutP {
     display: flex;
     justify-content: center;
     z-index: 0;
@@ -17,7 +17,37 @@
 }
 
 .eleHeadTwo {
-    margin: 2% 15%;
+    margin: 2% 15% 0% 15%;
     font-size: 2.2rem;
     font-weight: bolder;
+}
+
+.eleHeadThree {
+    margin-top: 40px;
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.competition-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.competition-link {
+    font-size: 1.1rem;
+    padding: 3px 0px 0px 8px;
+    color: rgb(40, 64, 12);
+    text-decoration: none;
+    margin: 0px 5px;
+}
+
+.competition-link:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(0, 197, 133);
+}
+
+.elevator-inner-container {
+    margin-top: 10%;
 }

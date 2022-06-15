@@ -1,0 +1,8 @@
+.nearHeadingOne {
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    margin-top: 80px;
+    font-size: .9rem;
+    font-weight: bold;
+}

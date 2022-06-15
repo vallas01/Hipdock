@@ -10,6 +10,7 @@ import Technology from "./components/Navigation/Technology";
 import Hipcash from "./components/Navigation/Hipcash";
 import ElevatorPitch from "./components/Navigation/ElevatorPitch";
 import Contact from "./components/Navigation/Contact";
+import NearMe from "./components/NearMe";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,9 @@ function App() {
           </Route>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/near">
+            <NearMe />
           </Route>
         </Switch>
       )}

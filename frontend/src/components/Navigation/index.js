@@ -31,10 +31,10 @@ function Navigation({ isLoaded }){
         <NavLink className="navBtn" to="/login">Saves</NavLink>
 
         <div className="dropdown">
-            <button id="logout" class="dropbtn">
+            <button id="logout" className="dropbtn">
               <img className='logout' src='./favicon.png' alt="logo"></img>
             </button>
-            <div class="dropdown-content">
+            <div className="dropdown-content">
               <a href="/">Account</a>
               <a href="/about">About</a>
               <a onClick={logout} href='/'>Log out</a>
@@ -45,18 +45,18 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <NavLink className="navBtn" to="/login">Near Me</NavLink>
+        <NavLink className="navBtn" to="/near">Near Me</NavLink>
 
         <div className="dropdown">
-              <button class="aboutBtn">
+              <button className="aboutBtn">
                 About
               </button>
-              <div class="dropdown-content">
+              <div className="dropdown-content">
+                <a href="/elevator">About Hipdock</a>
                 <a href="/about">About me</a>
                 {/* TODO Add a page listing your values */}
                 {/* <a href="/">My values</a> */}
                 <a href="/technology">Technologies</a>
-                <a href="/elevator">Elevator Pitch</a>
                 <a href="/contact">Contact info</a>
               </div>
         </div>
