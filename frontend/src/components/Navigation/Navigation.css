@@ -37,6 +37,7 @@
     width: 80px;
     font-size: 1rem;
     padding-top: 8px ;
+    background-color: rgba(0,0,0,0);
 }
 
 .loginBtn:hover, .signupBtn:hover, .navBtn:hover, .aboutBtn:hover {
@@ -73,7 +74,7 @@
     border: none;
     outline: none;
     padding: 0px 16px;
-    background-color: #f3f2ef;
+    background-color: rgba(0,0,0,0);
 }
 
 

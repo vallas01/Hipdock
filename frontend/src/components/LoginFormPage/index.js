@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import './LoginForm.css';
 
 
@@ -35,10 +35,10 @@ function LoginFormPage() {
   return (
     <div className='login-container'>
       <form className='login-form' onSubmit={handleSubmit}>
-        <div>
+        <div className='loginHead1'>
           Welcome back!
         </div>
-        <div>
+        <div className='loginHead2'>
           Let's get you outside.
         </div>
 
@@ -67,8 +67,13 @@ function LoginFormPage() {
             autoComplete='new-password'
           />
         </label>
-        <button className='login-btn' type="submit">Log In</button>
-        <button className='login-btn' type="submit" onClick={handleDemo}>Demo User</button>
+        <button className='loginBtn3' type="submit">Log In</button>
+        <button className='loginBtn3' type="submit" onClick={handleDemo}>Demo User</button>
+        <div className='hipcash-para2'>
+          Don't have a Hipdock account?
+          {/* TODO add CSS, currently using CSS from hipcash and navigation */}
+          <NavLink className="loginBtn loginBtn2" to="/signup">Sign up!</NavLink>
+        </div>
       </form>
     </div>
   );
