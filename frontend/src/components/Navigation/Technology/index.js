@@ -10,7 +10,7 @@ const Technology = () => {
             <div className='tech-container'>
                 <div className='tech'>
                     <i className="fa-brands fa-js fa-2xl"></i>
-                    <a className="developer-link" href='https://developer.mozilla.org/en-US/docs/Web/JavaScript' >Javascript</a>
+                    <a className="developer-link" href='https://developer.mozilla.org/en-US/docs/Web/JavaScript' >JavaScript</a>
                 </div>
                 <div className='tech'>
                     <i className="fa-brands fa-css3-alt fa-2xl"></i>
