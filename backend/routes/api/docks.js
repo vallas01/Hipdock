@@ -8,7 +8,7 @@ const { User, Dock, Review } = require('../../db/models');
 
 const router = express.Router();
 
-const validateMarinaForm = [
+const validateDockForm = [
     check('name')
       .exists({ checkFalsy: true })
       .notEmpty()
@@ -22,8 +22,9 @@ const validateMarinaForm = [
     handleValidationErrors,
   ];
 
-  //get all marinas
+  //get all docks
 router.get('/', asyncHandler(async function(req, res) {
+    console.log("GOT HERE")
     const docks = await Dock.findAll();
     return res.json(docks);
 }));
