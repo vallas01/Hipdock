@@ -33,19 +33,19 @@ module.exports = {
       },
       cost: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.DECIMAL
       },
       description: {
         allowNull: false,
-        type: Sequelize.STRING(40)
+        type: Sequelize.TEXT
       },
       longitude: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.DECIMAL
       },
       latitude: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.DECIMAL
       },
       imagePath: {
         type: Sequelize.STRING

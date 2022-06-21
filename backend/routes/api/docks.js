@@ -29,5 +29,10 @@ router.get('/', asyncHandler(async function(req, res) {
     return res.json(docks);
 }));
 
+router.post('/', validateDockForm, asyncHandler(async function(req,res){
+  const newDock = await Dock.create(req.body);
+  return res.json(newDock)
+}))
+
 
 module.exports = router;

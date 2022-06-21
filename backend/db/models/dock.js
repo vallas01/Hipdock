@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
     city: DataTypes.STRING,
     state: DataTypes.STRING,
     country: DataTypes.STRING,
-    cost: DataTypes.INTEGER,
-    description: DataTypes.STRING,
-    longitude: DataTypes.INTEGER,
-    latitude: DataTypes.INTEGER,
+    cost: DataTypes.DECIMAL,
+    description: DataTypes.TEXT,
+    longitude: DataTypes.DECIMAL,
+    latitude: DataTypes.DECIMAL,
     imagePath: DataTypes.STRING
   }, {});
   Dock.associate = function(models) {

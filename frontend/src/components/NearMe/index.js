@@ -15,7 +15,7 @@ const NearMe = () => {
 
     return (
         <div className='nearMe-outer-container'>
-            <div className='nearHeadingOne'>UNDER CONSTRUCTION</div>
+            <div className='nearHeadingOne'>Where would you like to dock?</div>
 
             <ul>
                 {Object.values(dock).map((dock)=>{
@@ -24,7 +24,7 @@ const NearMe = () => {
                             <img className='imgDock' src={dock.imagePath} alt='dock' />
                             <div className='dockName'>{dock.name}</div>
                             <div className='dockDescription'>{dock.description}</div>
-                            <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost.toFixed(2)}&nbsp;/ foot</div>
+                            <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
                         </li>
                     )
                 })}

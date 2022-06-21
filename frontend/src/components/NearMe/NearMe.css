@@ -2,10 +2,17 @@
     display: flex;
     justify-content: center;
     z-index: 0;
-    margin-top: 80px;
-    font-size: .9rem;
-    font-weight: bold;
+    margin: 80px 0px 20px 0px;
+    font-size: 2.2rem;
+    font-weight: bolder;
 }
+
+.eleHeadTwo {
+  margin: 2% 15% 0% 15%;
+  font-size: 2.2rem;
+  font-weight: bolder;
+}
+
 ul {
   list-style: none;
   display: grid;
@@ -42,6 +49,6 @@ li {
   z-index: 0;
 }
 .imgDock:hover {
-  bottom: 5px;
-  left: 5px;
+  bottom: 4px;
+  box-shadow: 0px 5px 5px rgba(0,0,0,.2);
 }
