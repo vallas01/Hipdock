@@ -6,15 +6,42 @@
     font-size: .9rem;
     font-weight: bold;
 }
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin: 0px 5%;
+  z-index: 0;
+}
+li {
+  margin: 0px auto;
+  z-index: 0;
+}
+
+.dockName {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.dockDescription {
+  font-style: italic;
+}
 .dot {
-    height: 7px;
-    width: 7px;
+    height: 5px;
+    width: 5px;
     background-color: black;
     border-radius: 50%;
     display: inline-block;
-    margin: 0px 4px 2px 4px;
-  }
-  .imgDock {
-    height: 100px;
-    
-  }
+    margin: 0px 14px 2px 14px;
+}
+.imgDock {
+  height: 70%;
+  width:300px;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 25px;
+  position: relative;
+  z-index: 0;
+}
+.imgDock:hover {
+  bottom: 5px;
+  left: 5px;
+}

@@ -15,25 +15,29 @@ module.exports = {
       },
       name: {
         allowNull: false,
-        type: Sequelize.STRING(20)
+        type: Sequelize.STRING(35)
       },
       address: {
         type: Sequelize.STRING(100)
       },
       city: {
-        type: Sequelize.STRING(10)
+        allowNull: false,
+        type: Sequelize.STRING(20)
       },
       state: {
+        allowNull: false,
         type: Sequelize.STRING(10)
       },
       country: {
         type: Sequelize.STRING(20)
       },
       cost: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       description: {
-        type: Sequelize.STRING(255)
+        allowNull: false,
+        type: Sequelize.STRING(40)
       },
       longitude: {
         allowNull: false,
