@@ -12,6 +12,7 @@ import ElevatorPitch from "./components/Navigation/ElevatorPitch";
 import Contact from "./components/Navigation/Contact";
 import NearMe from "./components/NearMe";
 import Splash from "./components/Navigation/Splash";
+import Host from "./components/Host";
 
 function App() {
   const dispatch = useDispatch();
@@ -52,6 +53,9 @@ function App() {
           </Route>
           <Route path="/near">
             <NearMe />
+          </Route>
+          <Route path="/host">
+            <Host />
           </Route>
         </Switch>
       )}
