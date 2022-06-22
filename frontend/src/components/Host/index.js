@@ -21,8 +21,6 @@ const Host = () => {
     const [latitude, setLatitude] = useState();
     const [imagePath, setImagePath] = useState();
 
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
@@ -46,6 +44,20 @@ const Host = () => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
         });
+        reset();
+    }
+
+    const reset = () => {
+        setName('');
+        setAddress('');
+        setCity('');
+        setState('');
+        setCountry('');
+        setCost('');
+        setDescription('');
+        setLongitude('');
+        setLatitude('');
+        setImagePath('');
     }
 
     return (
