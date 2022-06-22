@@ -45,15 +45,18 @@ const Host = () => {
             .catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);
-          });
-      }
+        });
+    }
 
     return (
         <div className='host-outer-container'>
-            <form onSubmit={handleSubmit} className="login-form">
-                <ul>
+            {errors.length>0 && (
+            <ul className='error-container'>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul>
+            </ul>
+            )}
+            <form onSubmit={handleSubmit} className="login-form">
+
                 <label>
                 Enter the information...
                 </label>
