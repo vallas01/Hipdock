@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createDock } from '../../store/dock';
 
 import './Host.css'
 
 const Host = () => {
+    const sessionUser = useSelector((state)=>state.session.user);
     const history = useHistory();
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
-    const [user_id, setUser_Id] = useState(1)
     const [name, setName] = useState()
     const [address, setAddress] = useState();
     const [city, setCity] = useState();
@@ -21,12 +21,12 @@ const Host = () => {
     const [latitude, setLatitude] = useState();
     const [imagePath, setImagePath] = useState();
 
-    // const dock = useSelector(state=>state.dock)
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
+        const user_id = sessionUser.id
         const newDock = {
             user_id,
             name,
@@ -50,6 +50,7 @@ const Host = () => {
 
     return (
         <div className='host-outer-container'>
+
             {errors.length>0 && (
             <ul className='error-container'>
                 {errors.map((error, idx) => <li key={idx}>{error}</li>)}

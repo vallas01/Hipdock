@@ -28,7 +28,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <NavLink className="navBtn" to="/login">Trips</NavLink>
-        <NavLink className="navBtn" to="/login">Saves</NavLink>
+        <NavLink className="navBtn" to="/host">Host</NavLink>
 
         <div className="dropdown">
             <button id="logout" className="dropbtn">
@@ -64,7 +64,7 @@ function Navigation({ isLoaded }){
         <NavLink className="navBtn" to="/hipcash">Earn Hipcash</NavLink>
         <NavLink className="loginBtn" to="/login">Log in</NavLink>
         <NavLink className="signupBtn" to="/signup">Sign up</NavLink>
-        <NavLink className="hostBtn" to="/host">Start Hosting</NavLink>
+        <NavLink className="hostBtn" to="/login">Start Hosting</NavLink>
         {/* <button className="hostBtn" type="Submit">Start Hosting</button> */}
       </>
     );
