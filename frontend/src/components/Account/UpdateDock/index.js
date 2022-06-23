@@ -55,95 +55,110 @@ function UpdateDock() {
     }
 
     return (
-        <>
+        <div className='update-container'>
+            <div className='update-container1'>
+                {errors.length>0 && (
+                <ul className='error-container'>
+                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+                </ul>
+                )}
+                {!errors.length && (
+                <li key={dock.id} >
+                    <img className='imgDock' src={dock.imagePath} alt='dock' />
+                    <div className='dockName'>{dock.name}</div>
+                    <div className='dockCityState'>{dock.address}</div>
+                    <div className='dockCityState'>{dock.city},{dock.state}</div>
+                    <div className='dockCityState'>{dock.country}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
+                    <div className='dockDescription'>{dock.description}</div>
+                    <div className='dockCityState'>latitude:&nbsp;{dock.latitude}</div>
+                    <div className='dockCityState'>longitude:&nbsp;{dock.longitude}</div>
 
-{errors.length>0 && (
-            <ul className='error-container'>
-                {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-            </ul>
-            )}
-            <form onSubmit={handleSubmit} className="login-form">
+                </li>)}
+            </div>
+            <div className='update-container2'>
+                <form onSubmit={handleSubmit} className="login-form">
 
-                <label>
-                Update the information...
-                </label>
-                <input
-                    type="text"
-                    placeholder='Enter a dock name...'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder='Enter an address...'
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder='Enter a city...'
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder='Enter a state or province...'
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                    required
-                />
-                <select id="country-state" name="country-state">
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                    <option value='' disabled select >'Select a country...'</option>
-                    <option value="USA">United States</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Bahamas">Bahamas</option>
-                    <option value="Mexico">Mexico</option>
-                </select>
-                <input
-                    type="text"
-                    placeholder='Enter cost...'
-                    value={cost}
-                    onChange={(e) => setCost(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder='Enter description...'
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder='Enter latitude...'
-                    value={latitude}
-                    onChange={(e) => setLatitude(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder='Enter longtitude...'
-                    value={longitude}
-                    onChange={(e) => setLongitude(e.target.value)}
-                    required
-                />
-                <input
-                    type="text"
-                    placeholder='Enter image path...'
-                    value={imagePath}
-                    onChange={(e) => setImagePath(e.target.value)}
-                    required
-                />
-                <button type="submit">Submit</button>
-            </form>
+                    <label>
+                    Update the information...
+                    </label>
+                    <input
+                        type="text"
+                        placeholder='Enter a dock name...'
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder='Enter an address...'
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder='Enter a city...'
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder='Enter a state or province...'
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                        required
+                    />
+                    <select id="country-state" name="country-state">
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        <option value='' disabled select >'Select a country...'</option>
+                        <option value="USA">United States</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Mexico">Mexico</option>
+                    </select>
+                    <input
+                        type="text"
+                        placeholder='Enter cost...'
+                        value={cost}
+                        onChange={(e) => setCost(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder='Enter description...'
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder='Enter latitude...'
+                        value={latitude}
+                        onChange={(e) => setLatitude(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder='Enter longtitude...'
+                        value={longitude}
+                        onChange={(e) => setLongitude(e.target.value)}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder='Enter image path...'
+                        value={imagePath}
+                        onChange={(e) => setImagePath(e.target.value)}
+                        required
+                    />
+                    <button type="submit">Submit</button>
+                </form>
 
+            </div>
 
-        </>
+        </div>
     )
 };
 

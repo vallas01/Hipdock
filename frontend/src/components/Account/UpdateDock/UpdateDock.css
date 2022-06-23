@@ -1,1 +1,11 @@
-
+.update-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.update-container1, .update-container2 {
+    margin-top: 20px;
+}
+li {
+    list-style: none;
+}
