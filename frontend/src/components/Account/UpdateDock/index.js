@@ -55,7 +55,7 @@ function UpdateDock() {
     }
 
     return (
-        <>Hello
+        <>
 
 {errors.length>0 && (
             <ul className='error-container'>
@@ -65,7 +65,7 @@ function UpdateDock() {
             <form onSubmit={handleSubmit} className="login-form">
 
                 <label>
-                Enter the information...
+                Update the information...
                 </label>
                 <input
                     type="text"
