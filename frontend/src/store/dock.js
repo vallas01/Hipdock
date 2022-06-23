@@ -32,6 +32,7 @@ export const getDocks = () => async (dispatch) => {
         const list = await response.json();
         dispatch(listDocks(list));
     }
+    return;
 };
 
 

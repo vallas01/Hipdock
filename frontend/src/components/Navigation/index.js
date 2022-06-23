@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import * as sessionActions from '../../store/session';
@@ -9,13 +9,16 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
 
-  const logout = (e) => {
+  const logout = async (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout());
+    history.push(`/`);
+    await dispatch(sessionActions.logout());
+
   };
+
 
 
   const audio = new Audio('./ships_bell.wav');
@@ -35,7 +38,7 @@ function Navigation({ isLoaded }){
               <img className='logout' src='./favicon.png' alt="logo"></img>
             </button>
             <div className="dropdown-content">
-              <a href="/">Account</a>
+              <a href="/account">Account</a>
               <a href="/about">About</a>
               <a onClick={logout} href='/'>Log out</a>
             </div>

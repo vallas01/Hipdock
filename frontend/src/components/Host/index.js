@@ -39,7 +39,7 @@ const Host = () => {
             imagePath
         };
         dispatch(createDock(newDock))
-            .then(()=>history.push(`/near`))
+            .then(()=>history.push(`/account`))
             .catch(async (res) => {
             const data = await res.json();
             if (data && data.errors) setErrors(data.errors);

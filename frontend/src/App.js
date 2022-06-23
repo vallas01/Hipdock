@@ -13,6 +13,7 @@ import Contact from "./components/Navigation/Contact";
 import NearMe from "./components/NearMe";
 import Splash from "./components/Navigation/Splash";
 import Host from "./components/Host";
+import Account from "./components/Account";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,32 +31,35 @@ function App() {
           <Route exact path="/">
             <Splash />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/about">
+          <Route exact path="/about">
             <About />
           </Route>
-          <Route path="/technology">
+          <Route exact path="/technology">
             <Technology />
           </Route>
-          <Route path="/hipcash">
+          <Route exact path="/hipcash">
             <Hipcash />
           </Route>
-          <Route path="/elevator">
+          <Route exact path="/elevator">
             <ElevatorPitch />
           </Route>
-          <Route path="/contact">
+          <Route exact path="/contact">
             <Contact />
           </Route>
-          <Route path="/near">
+          <Route exact path="/host">
+            <Host />
+          </Route>
+          <Route exact path="/near">
             <NearMe />
           </Route>
-          <Route path="/host">
-            <Host />
+          <Route exact path="/account">
+            <Account />
           </Route>
         </Switch>
       )}
