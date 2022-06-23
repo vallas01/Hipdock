@@ -75,9 +75,9 @@ router.put('/:id(\\d+)', validateDockForm, asyncHandler(async function(req, res)
 
   const dockToEdit = await Dock.findByPk(req.params.id);
 
-  const {cost}   = req.body
+  const {name, address, city, state, country, cost, description, longitude, latitude, imagePath}   = req.body
   await dockToEdit.update({
-      cost,
+    name, address, city, state, country, cost, description, longitude, latitude, imagePath
   });
   const idDock = req.params.id
   const editedDock = await Dock.findByPk(idDock);
