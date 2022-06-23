@@ -18,24 +18,41 @@ const Account = () => {
         dispatch(getDocks())
     }, [dispatch]);
 
+
+    let found = false;
+    // // eslint-disable-next-line
+    // {Object.values(docks).map((dock)=> {
+    //     if (dock.user_id === userId) found = true;
+    //     return;
+    // })};
+
     return (
         <div className='account-outer-container'>
-            <div className='nearHeadingOne'>The docks {userName} is currently hosting</div>
+            <div className='nearHeadingOne'>The docks {userName} is currently hosting...</div>
 
             <ul>
                 {Object.values(docks).map((dock)=>{
+                    if (dock.user_id === userId) found = true;
                     return(
+
                         dock.user_id === userId && (<li key={dock.id} >
                                     <img className='imgDock' src={dock.imagePath} alt='dock' />
                                     <div className='dockName'>{dock.name}</div>
                                     <div className='dockDescription'>{dock.description}</div>
                                     <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
-                                    <Link className="accountUpDateBtn" to={`/docks/${dock.id}`}>UpDate</Link>
+                                    <Link className="accountUpDateBtn brown-hover" to={`/docks/${dock.id}`}>UpDate</Link>
                                     <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisDock(dock.id)}>Delete</button>
                                 </li>)
                     )
                 })}
+
             </ul>
+                {!found && (
+                <div className='notHosting' >
+                    <div >NOT HOSTING YET!</div>
+                    <i className="fa-regular fa-face-frown fa-2xl"></i>
+                </div>
+                )}
 
         </div>
     )

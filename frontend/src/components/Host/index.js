@@ -71,7 +71,7 @@ const Host = () => {
             <form onSubmit={handleSubmit} className="login-form">
 
                 <label>
-                Enter the information...
+                Enter your dock information...
                 </label>
                 <input
                     type="text"
