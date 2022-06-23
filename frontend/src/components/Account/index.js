@@ -30,8 +30,7 @@ const Account = () => {
                                     <div className='dockName'>{dock.name}</div>
                                     <div className='dockDescription'>{dock.description}</div>
                                     <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
-                                    <button className="accountUpDateBtn">UpDate</button>
-                                    <Link  to={`/docks/${dock.id}`}>UpDate</Link>
+                                    <Link className="accountUpDateBtn" to={`/docks/${dock.id}`}>UpDate</Link>
                                     <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisDock(dock.id)}>Delete</button>
                                 </li>)
                     )

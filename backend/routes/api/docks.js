@@ -64,12 +64,29 @@ router.get('/', asyncHandler(async function(req, res) {
     return res.json(docks);
 }));
 
+  //create a dock
 router.post('/', validateDockForm, asyncHandler(async function(req,res){
   const newDock = await Dock.create(req.body);
   return res.json(newDock)
 }))
 
-//delete a marina
+  //update a dock
+router.put('/:id(\\d+)', validateDockForm, asyncHandler(async function(req, res) {
+
+  const dockToEdit = await Dock.findByPk(req.params.id);
+
+  const {cost}   = req.body
+  await dockToEdit.update({
+      cost,
+  });
+  const idDock = req.params.id
+  const editedDock = await Dock.findByPk(idDock);
+
+  res.json(editedDock);
+}));
+
+
+  //delete a marina
 router.delete('/:id(\\d+)', asyncHandler(async function(req, res) {
 
   const dock = await Dock.findByPk(req.params.id)
