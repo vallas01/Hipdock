@@ -69,5 +69,13 @@ router.post('/', validateDockForm, asyncHandler(async function(req,res){
   return res.json(newDock)
 }))
 
+//delete a marina
+router.delete('/:id(\\d+)', asyncHandler(async function(req, res) {
+
+  const dock = await Dock.findByPk(req.params.id)
+  await dock.destroy();
+  // const allMarinas = await Business.findAll();
+  return res.json(req.params.id)
+}));
 
 module.exports = router;

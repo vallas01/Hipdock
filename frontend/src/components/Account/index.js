@@ -1,7 +1,8 @@
 import './Account.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
-import { getDocks } from '../../store/dock';
+import { deleteDock, getDocks } from '../../store/dock';
+import { Link } from 'react-router-dom';
 
 const Account = () => {
     const dispatch = useDispatch();
@@ -9,6 +10,9 @@ const Account = () => {
     const userName = useSelector(state=>state.session.user.username);
     const docks = useSelector(state=> state.dock)
 
+    const deleteThisDock = (id) => {
+        dispatch(deleteDock(id))
+    }
 
     useEffect(() => {
         dispatch(getDocks())
@@ -27,7 +31,8 @@ const Account = () => {
                                     <div className='dockDescription'>{dock.description}</div>
                                     <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
                                     <button className="accountUpDateBtn">UpDate</button>
-                                    <button className='accountDeleteBtn'>Delete</button>
+                                    <Link  to={`/docks/${dock.id}`}>UpDate</Link>
+                                    <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisDock(dock.id)}>Delete</button>
                                 </li>)
                     )
                 })}

@@ -14,6 +14,7 @@ import NearMe from "./components/NearMe";
 import Splash from "./components/Navigation/Splash";
 import Host from "./components/Host";
 import Account from "./components/Account";
+import UpdateDock from "./components/Account/UpdateDock";
 
 function App() {
   const dispatch = useDispatch();
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route exact path="/account">
             <Account />
+          </Route>
+          <Route exact path="/docks/:dockId">
+            <UpdateDock />
           </Route>
         </Switch>
       )}
