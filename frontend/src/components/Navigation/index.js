@@ -30,14 +30,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <>
-
-        <div className="dropdown">
-          <button className='bookbtn'>Booking</button>
-          <div className="dropdown-content" >
-            <a href="/about">New Booking</a>
-            <a href="/about">Existing Booking</a>
-          </div>
-        </div>
+        <NavLink className="navBtn" to="/host">Booking</NavLink>
         <NavLink className="navBtn" to="/host">Hosting</NavLink>
 
         <div className="dropdown">

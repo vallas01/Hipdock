@@ -70,19 +70,13 @@
     overflow: hidden;
 }
 
-.dropdown, .dropbtn, .bookbtn {
+.dropdown, .dropbtn {
     font-size: 1rem;
     border: none;
     outline: none;
     padding: 2px 16px;
     background-color: rgba(0,0,0,0);
 }
-.bookbtn {
-    margin: 6px;
-}
-
-
-
 
 .dropdown-content {
     display: none;

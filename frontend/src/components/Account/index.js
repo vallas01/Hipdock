@@ -18,13 +18,7 @@ const Account = () => {
         dispatch(getDocks())
     }, [dispatch]);
 
-
     let found = false;
-    // // eslint-disable-next-line
-    // {Object.values(docks).map((dock)=> {
-    //     if (dock.user_id === userId) found = true;
-    //     return;
-    // })};
 
     return (
         <div className='account-outer-container'>
@@ -47,12 +41,15 @@ const Account = () => {
                 })}
 
             </ul>
-                {!found && (
-                <div className='notHosting' >
-                    <div >NOT HOSTING YET!</div>
-                    <i className="fa-regular fa-face-frown fa-2xl"></i>
-                </div>
-                )}
+
+            {!found && (
+            <div className='notHosting' >
+                <div >NOT HOSTING YET!</div>
+                <i className="fa-regular fa-face-frown fa-2xl"></i>
+            </div>
+            )}
+
+            <div className='nearHeadingOne'>The docks {userName} has already booked...</div>
 
         </div>
     )

@@ -58,9 +58,11 @@ function UpdateDock() {
         <div className='update-container'>
             <div className='update-container1'>
                 {errors.length>0 && (
-                <ul className='error-container'>
-                    {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-                </ul>
+                <div >
+                    <ul className='error-upDateContainer'>
+                        {errors.map((error, idx) => <li className='errorList' key={idx}>{error}</li>)}
+                    </ul>
+                </div>
                 )}
                 {!errors.length && (
                 <li key={dock.id} >
