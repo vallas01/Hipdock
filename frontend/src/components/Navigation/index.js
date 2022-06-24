@@ -30,7 +30,7 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <>
-        <NavLink className="navBtn" to="/host">Booking</NavLink>
+        <NavLink className="navBtn" to="/booking">Booking</NavLink>
         <NavLink className="navBtn" to="/host">Hosting</NavLink>
 
         <div className="dropdown">
@@ -38,7 +38,7 @@ function Navigation({ isLoaded }){
               <img className='logout' src='./favicon.png' alt="logo"></img>
             </button>
             <div className="dropdown-content">
-              <a href="/account">Account</a>
+              <a href="/account">My Account</a>
               <a href="/about">About</a>
               <a onClick={logout} href='/'>Log out</a>
             </div>
