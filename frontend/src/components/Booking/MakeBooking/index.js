@@ -7,38 +7,45 @@ import './MakeBooking.css'
 const MakeBooking = ()=>{
     const dispatch = useDispatch();
     const history = useHistory()
-    const user_id = useSelector((state)=>state.session.user)
-    const dock_id = useParams();
+    const sessionUser= useSelector((state)=>state.session.user)
+    const { dockId } = useParams();
     const [errorMessages, setErrorMessages]=useState([])
     const [startDate,setStartDate] = useState();
     const [endDate, setEndDate] = useState();
     //eslint-disable-next-line
-    const [totalCost, setTotalCost] = useState(0)
+    const [totalCost, setTotalCost] = useState(100)
 
 
     useEffect(() => {
-        const today = new Date();
-
-        console.log(`today's date from Date(): ${today}`)
-        console.log(`startDate from input: ${startDate}`)
-        console.log(`endDate from input: ${endDate}`)
-
         const errors = []
+
+        const d = new Date();
+        let text = d.toString();
+        // const today = new Date();
+        // const checkStart = new Date(startDate);
+        console.log(`today's date from Date(): ${text}`)
+        // console.log(`startDate from input: ${startDate}`)
+        // console.log(`checkStart from input: ${checkStart}`)
+        // if(checkStart<today){
+        //     errors.push("Starting date can not be in the past. ");
+        //     reset();
+        // }
+
         if(startDate>endDate){
             errors.push("Starting date can not come after ending date. ");
             reset();
         }
-        if(startDate<today){
-            errors.push("Starting date can not be in the past. ");
-            reset();
-        }
+
         setErrorMessages(errors)
     }, [startDate, endDate])
+
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // setErrors([]);
+        const user_id = sessionUser.id
+        const dock_id = dockId
         const newBooking = {
             user_id,
             dock_id,
@@ -46,6 +53,10 @@ const MakeBooking = ()=>{
             endDate,
             totalCost,
         };
+
+        console.log(`userId.....${user_id}`)
+        console.log(`dockId.....${dock_id}`)
+
         dispatch(createBooking(newBooking))
             .then(()=>history.push(`/account`))
             .catch(async (res) => {
