@@ -18,7 +18,7 @@ const About = () => {
                 </div>
                 <div className="aboutLinks">
                     <i className="fa-brands fa-github-square"></i>
-                    <a href='https://github.com/vallas01/Hipsail'  className='developer-link'>GitHub</a>
+                    <a href='https://github.com/vallas01'  className='developer-link'>GitHub</a>
                     <i className="fa-brands fa-linkedin"></i>
                     <a href='https://www.linkedin.com/in/andrew-vallas-221b5a241/' className='developer-link'>LinkedIn</a>
                 </div>
