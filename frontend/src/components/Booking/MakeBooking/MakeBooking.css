@@ -6,6 +6,10 @@
     padding-top: 40px;
     background-color: white;
 }
+.booking-form-container {
+    display: flex;
+    justify-content: center;
+}
 
 .errors {
     width: 30%;
@@ -14,13 +18,17 @@
     flex-direction: column;
     background-color: lightgrey;
     padding: 20px;
-    gap: 10px;
     color:#d32323
 }
 .bookingErrorList {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;;
+    padding: 0px;
+}
+.bookingErrorListItem {
+    margin: 0px 0px 15px 5px;
+    list-style: circle;
+
 }
 
 .booking-form-container {

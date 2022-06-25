@@ -21,13 +21,13 @@ const MakeBooking = ()=>{
     const [error, setError]=useState([])
     const [startDate,setStartDate] = useState(`2022-06-${d1}`);
     const [endDate, setEndDate] = useState(`2022-06-${d2}`);
-    const [length, setLength] = useState();
+    const [length, setLength] = useState(20);
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setError([]);
-console.log(`start:  ${startDate}`)
+
         const checkStart = new Date(startDate)
         const checkEnd = new Date(endDate)
 
@@ -38,7 +38,14 @@ console.log(`start:  ${startDate}`)
             return;
         }
         if(checkStart<today){
-            error.push("Start date can not be in the past.")
+            error.push("Earliest start date is tomorrow.")
+            setError(error);
+            reset();
+            return;
+        }
+
+        if( length < 20 || length > 65 || isNaN(length) ){
+            error.push("Boat length reservation must be between 20 to 65 feet.")
             setError(error);
             reset();
             return;
@@ -57,7 +64,7 @@ console.log(`start:  ${startDate}`)
             dock_id,
             startDate,
             endDate,
-            totalCost: costBook,
+            totalCost: costBook.toFixed(2),
         };
 
 
@@ -72,18 +79,21 @@ console.log(`start:  ${startDate}`)
     }
 
     const reset = () => {
-        setStartDate('');
-        setEndDate('');
-        setLength('')
+        setStartDate(`2022-06-${d1}`);
+        setEndDate(`2022-06-${d2}`);
+        setLength('20');
     }
 
 
     return (
         <div className='booking-outer-container'>
             { error.length>0 && (<div className="errors">
-                <ul className='bookingErrorList'>
+                <ul className='bookingErrorList' >
                     {error.map(errorMess => (
-                    <li key={error.indexOf(errorMess)}>{errorMess}</li>
+                    <li
+                        className='bookingErrorListItem'
+                        key={error.indexOf(errorMess)}>{errorMess}
+                    </li>
                     ))}
                 </ul>
             </div>)}

@@ -18,10 +18,10 @@ const NearMe = () => {
         <div className='nearMe-outer-container'>
             <div className='nearHeadingOne'>Where would you like to dock?</div>
 
-            <ul>
+            <ul className='near-ul'>
                 {Object.values(dock).map((dock)=>{
                     return(
-                        <li key={dock.id} >
+                        <li className='near-li' key={dock.id} >
                             <NavLink to={{
                                 pathname:`/login`,
                                 aboutProps:{dockId:`${dock.id}`}

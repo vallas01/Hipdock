@@ -16,10 +16,10 @@ const Booking = ()=>{
         <div className='nearMe-outer-container'>
             <div className='nearHeadingOne'>Where would you like to dock?</div>
 
-            <ul>
+            <ul className='book-ul'>
                 {Object.values(dock).map((dock)=>{
                     return(
-                        <li key={dock.id} >
+                        <li className='book-li' key={dock.id} >
                             <NavLink to={`/booking/${dock.id}`}>
                                 <img className='imgDock' src={dock.imagePath} alt='dock' />
                             </NavLink>
