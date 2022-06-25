@@ -32,7 +32,11 @@ function LoginFormPage() {
     setPassword('password');
   }
 
-  
+  const audio = new Audio('./ships_bell.wav');
+  const ring = (e) => {
+    audio.play();
+  }
+
   return (
     <div className='login-container'>
       <form className='login-form' onSubmit={handleSubmit}>
@@ -43,7 +47,7 @@ function LoginFormPage() {
           Let's get you outside.
         </div>
 
-        <ul>
+        <ul className='loginError-ul'>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
         <label>
@@ -68,7 +72,7 @@ function LoginFormPage() {
             autoComplete='new-password'
           />
         </label>
-        <button className='loginBtn3' type="submit">Log In</button>
+        <button className='loginBtn3' type="submit" onClick={ ring }>Log In</button>
         <button className='loginBtn3' type="submit" onClick={handleDemo}>Demo User</button>
         <div className='hipcash-para2'>
           Don't have a Hipdock account?

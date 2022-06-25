@@ -13,7 +13,6 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
 
 
-  const audio = new Audio('./ships_bell.wav');
   const logout = async (e) => {
     e.preventDefault();
     audio.play();
@@ -22,6 +21,7 @@ function Navigation({ isLoaded }){
 
   };
 
+  const audio = new Audio('./ships_bell.wav');
   const ring = (e) => {
     audio.play();
   }

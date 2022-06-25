@@ -16,27 +16,25 @@ const MakeBooking = ()=>{
     var d1 = today.getDate();
     var d2 = d1 + 1
 
-
     const sessionUser= useSelector((state)=>state.session.user)
     const [error, setError]=useState([])
     const [startDate,setStartDate] = useState(`2022-06-${d1}`);
     const [endDate, setEndDate] = useState(`2022-06-${d2}`);
     const [length, setLength] = useState(20);
 
-
     const handleSubmit = (e) => {
         e.preventDefault();
         setError([]);
-
         const checkStart = new Date(startDate)
         const checkEnd = new Date(endDate)
 
-        if(checkStart>checkEnd){
-            error.push("Starting date can not come after ending date.");
+        if(checkStart>=checkEnd){
+            error.push("Starting date can not come on or after ending date.");
             setError(error);
             reset();
             return;
         }
+
         if(checkStart<today){
             error.push("Earliest start date is tomorrow.")
             setError(error);
@@ -45,7 +43,7 @@ const MakeBooking = ()=>{
         }
 
         if( length < 20 || length > 65 || isNaN(length) ){
-            error.push("Boat length reservation must be between 20 to 65 feet.")
+            error.push("Boat length reservation must be between 20 and 65 feet.")
             setError(error);
             reset();
             return;
@@ -87,18 +85,33 @@ const MakeBooking = ()=>{
 
     return (
         <div className='booking-outer-container'>
-            { error.length>0 && (<div className="errors">
-                <ul className='bookingErrorList' >
-                    {error.map(errorMess => (
-                    <li
-                        className='bookingErrorListItem'
-                        key={error.indexOf(errorMess)}>{errorMess}
-                    </li>
-                    ))}
-                </ul>
-            </div>)}
+            <div className='booking-dock-container1'>
+                <li key={dock.id} >
+                    <img className='imgDock' src={dock.imagePath} alt='dock' />
+                    <div className='dockName'>{dock.name}</div>
+                    <div className='dockCityState'>{dock.address}</div>
+                    <div className='dockCityState'>{dock.city},{dock.state}</div>
+                    <div className='dockCityState'>{dock.country}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
+                    <div className='dockDescription'>{dock.description}</div>
+                    <div className='dockCityState'>latitude:&nbsp;{dock.latitude}</div>
+                    <div className='dockCityState'>longitude:&nbsp;{dock.longitude}</div>
+                </li>
+            </div>
+
             <div className="booking-form-container">
-                <form onSubmit={handleSubmit} className="login-form">
+
+                { error.length>0 && (<div className="errors">
+                    <ul className='bookingErrorList' >
+                        {error.map((errorMess,idx) => (
+                        <li
+                            className='bookingErrorListItem'
+                            key={idx}>{errorMess}
+                        </li>
+                        ))}
+                    </ul>
+                </div>)}
+
+                <form onSubmit={handleSubmit} className="booking-form">
 
                     <label>
                     Enter your arrival date...
@@ -133,6 +146,7 @@ const MakeBooking = ()=>{
 
                     <button type="submit">Submit</button>
                 </form>
+
             </div>
         </div>
     );

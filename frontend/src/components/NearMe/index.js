@@ -10,10 +10,6 @@ const NearMe = () => {
         return state.dock;
     })
 
-    // TODO ******************************************
-    // const audio = new Audio('./ships_bell.wav');
-    // audio.play();
-
     useEffect(() => {
         dispatch(getDocks())
     }, [dispatch]);
