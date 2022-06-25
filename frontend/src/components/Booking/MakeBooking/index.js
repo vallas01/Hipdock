@@ -64,7 +64,7 @@ const MakeBooking = ()=>{
             dock_id,
             startDate,
             endDate,
-            totalCost: costBook.toFixed(2),
+            totalCost: costBook,
         };
 
 

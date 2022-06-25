@@ -19,7 +19,7 @@ module.exports = {
         references: {model: 'Docks'}
       },
       totalCost: {
-        type: Sequelize.INTEGER
+        type: Sequelize.NUMERIC
       },
       startDate: {
         type: Sequelize.DATE
