@@ -15,6 +15,8 @@ import Splash from "./components/Navigation/Splash";
 import Host from "./components/Host";
 import Account from "./components/Account";
 import UpdateDock from "./components/Account/UpdateDock";
+import Booking from "./components/Booking";
+import MakeBooking from "./components/Booking/MakeBooking";
 
 function App() {
   const dispatch = useDispatch();
@@ -64,6 +66,12 @@ function App() {
           </Route>
           <Route exact path="/docks/:dockId">
             <UpdateDock />
+          </Route>
+          <Route exact path="/booking">
+            <Booking />
+          </Route>
+          <Route exact path="/booking/:dockId">
+            <MakeBooking />
           </Route>
         </Switch>
       )}

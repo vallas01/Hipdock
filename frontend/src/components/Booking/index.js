@@ -1,18 +1,12 @@
-import './NearMe.css'
-import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
-import { getDocks } from '../../store/dock';
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { getDocks } from '../../store/dock';
+import './Booking.css'
 
-const NearMe = () => {
+const Booking = ()=>{
     const dispatch = useDispatch();
-    const dock = useSelector(state=> {
-        return state.dock;
-    })
-
-    // TODO ******************************************
-    // const audio = new Audio('./ships_bell.wav');
-    // audio.play();
+    const dock = useSelector(state=>state.dock);
 
     useEffect(() => {
         dispatch(getDocks())
@@ -22,14 +16,11 @@ const NearMe = () => {
         <div className='nearMe-outer-container'>
             <div className='nearHeadingOne'>Where would you like to dock?</div>
 
-            <ul className='near-ul'>
+            <ul className='book-ul'>
                 {Object.values(dock).map((dock)=>{
                     return(
-                        <li className='near-li' key={dock.id} >
-                            <NavLink to={{
-                                pathname:`/login`,
-                                aboutProps:{dockId:`${dock.id}`}
-                            }}>
+                        <li className='book-li' key={dock.id} >
+                            <NavLink to={`/booking/${dock.id}`}>
                                 <img className='imgDock' src={dock.imagePath} alt='dock' />
                             </NavLink>
                             <div className='dockName'>{dock.name}</div>
@@ -41,7 +32,7 @@ const NearMe = () => {
             </ul>
 
         </div>
-    )
-}
+    );
+};
 
-export default NearMe
+export default Booking;
