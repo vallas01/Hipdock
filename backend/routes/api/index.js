@@ -1,11 +1,13 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-const dockRouter = require('./docks')
+const dockRouter = require('./docks');
+const bookingRouter = require('./bookings')
 
 router.use('/session', sessionRouter);
 router.use('/users', usersRouter);
 router.use('/docks', dockRouter);
+router.use('/bookings', bookingRouter);
 
 
 

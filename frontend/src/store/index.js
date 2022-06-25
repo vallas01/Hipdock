@@ -2,11 +2,13 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import dockReducer from "./dock";
 import sessionReducer from './session';
+import bookingReducer from "./book";
 
 const rootReducer = combineReducers({
   // add reducer functions here
   session: sessionReducer,
-  dock: dockReducer
+  dock: dockReducer,
+  booking: bookingReducer
 });
 
 let enhancer;

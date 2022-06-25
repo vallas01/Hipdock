@@ -1,0 +1,12 @@
+.book-ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 0px 5%;
+    z-index: 0;
+}
+
+.book-li {
+margin: 0px auto;
+z-index: 0;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -12,33 +12,35 @@ function Navigation({ isLoaded }){
   const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
 
+
+  const audio = new Audio('./ships_bell.wav');
   const logout = async (e) => {
     e.preventDefault();
+    audio.play();
     history.push(`/`);
     await dispatch(sessionActions.logout());
 
   };
 
+  const ring = (e) => {
+    audio.play();
+  }
 
 
-  const audio = new Audio('./ships_bell.wav');
-  useEffect(()=>{
-    audio.play()
-  })
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
-        <NavLink className="navBtn" to="/host">Booking</NavLink>
-        <NavLink className="navBtn" to="/host">Hosting</NavLink>
+        <NavLink className="navBtn" to="/booking">Book a Dock</NavLink>
+        <NavLink className="navBtn" to="/host">Start Hosting</NavLink>
 
         <div className="dropdown">
             <button id="logout" className="dropbtn">
               <img className='logout' src='./favicon.png' alt="logo"></img>
             </button>
             <div className="dropdown-content">
-              <a href="/account">Account</a>
+              <a href="/account">My Account</a>
               <a href="/about">About</a>
               <a onClick={logout} href='/'>Log out</a>
             </div>
@@ -76,7 +78,7 @@ function Navigation({ isLoaded }){
     <div className='nav-container'>
       <div className='navLeft-container'>
         <NavLink exact to="/">
-          <img className='logoNav' src='./hipdock.png' alt="logo"></img>
+          <img onClick={ring} className='logoNav' src='./hipdock.png' alt="logo"></img>
         </NavLink>
       </div>
       <div className='navRight-container'>
