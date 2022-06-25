@@ -12,14 +12,21 @@ const MakeBooking = ()=>{
     const docks = useSelector((state)=>state.dock)
     const dock = docks[dockId]
 
-    var today = new Date()
-    var d1 = today.getDate();
-    var d2 = d1 + 1
+    let today = new Date()
+    let d1 = today.getDate() + 1;
+
+    let mInt = today.getMonth() + 1
+    let m = mInt < 10 ? '0' + mInt.toString() : mInt.toString()
+
+    let yearInt = today.getFullYear()
+    let yearMax = yearInt + 1;
+    let y = yearInt.toString();
+    let y1 = yearMax.toString();
 
     const sessionUser= useSelector((state)=>state.session.user)
     const [error, setError]=useState([])
-    const [startDate,setStartDate] = useState(`2022-06-${d1}`);
-    const [endDate, setEndDate] = useState(`2022-06-${d2}`);
+    const [startDate,setStartDate] = useState(`2022-${m}-${d1}`);
+    const [endDate, setEndDate] = useState('');
     const [length, setLength] = useState(20);
 
     const handleSubmit = (e) => {
@@ -78,7 +85,7 @@ const MakeBooking = ()=>{
 
     const reset = () => {
         setStartDate(`2022-06-${d1}`);
-        setEndDate(`2022-06-${d2}`);
+        setEndDate('');
         setLength('20');
     }
 
@@ -120,6 +127,7 @@ const MakeBooking = ()=>{
                         type="date"
                         placeholder='start date...'
                         value={startDate}
+                        min={`${y}-${m}-${d1}`}
                         onChange={(e) => setStartDate(e.target.value)}
                         required
                         />
@@ -130,6 +138,7 @@ const MakeBooking = ()=>{
                         type="date"
                         placeholder='Enter an address...'
                         value={endDate}
+                        max= {`${y1}-${m}-${d1}`}
                         onChange={(e) => setEndDate(e.target.value)}
                         required
                     />
