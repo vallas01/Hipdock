@@ -1,3 +1,11 @@
+.booking-outer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    background-color: white;
+}
 
 .errors {
     width: 30%;
@@ -9,14 +17,10 @@
     gap: 10px;
     color:#d32323
 }
-
-.booking-outer-container {
+.bookingErrorList {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 40px;
-    background-color: white;
+    margin-bottom: 20px;;
 }
 
 .booking-form-container {

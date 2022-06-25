@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { createBooking } from '../../../store/book';
@@ -7,43 +7,49 @@ import './MakeBooking.css'
 const MakeBooking = ()=>{
     const dispatch = useDispatch();
     const history = useHistory()
-    const sessionUser= useSelector((state)=>state.session.user)
     const { dockId } = useParams();
-    const [errorMessages, setErrorMessages]=useState([])
-    const [startDate,setStartDate] = useState();
-    const [endDate, setEndDate] = useState();
-    //eslint-disable-next-line
-    const [totalCost, setTotalCost] = useState(100)
+
+    const docks = useSelector((state)=>state.dock)
+    const dock = docks[dockId]
+
+    var today = new Date()
+    var d1 = today.getDate();
+    var d2 = d1 + 1
 
 
-    useEffect(() => {
-        const errors = []
-
-        const d = new Date();
-        let text = d.toString();
-        // const today = new Date();
-        // const checkStart = new Date(startDate);
-        console.log(`today's date from Date(): ${text}`)
-        // console.log(`startDate from input: ${startDate}`)
-        // console.log(`checkStart from input: ${checkStart}`)
-        // if(checkStart<today){
-        //     errors.push("Starting date can not be in the past. ");
-        //     reset();
-        // }
-
-        if(startDate>endDate){
-            errors.push("Starting date can not come after ending date. ");
-            reset();
-        }
-
-        setErrorMessages(errors)
-    }, [startDate, endDate])
-
+    const sessionUser= useSelector((state)=>state.session.user)
+    const [error, setError]=useState([])
+    const [startDate,setStartDate] = useState(`2022-06-${d1}`);
+    const [endDate, setEndDate] = useState(`2022-06-${d2}`);
+    const [length, setLength] = useState();
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // setErrors([]);
+        setError([]);
+console.log(`start:  ${startDate}`)
+        const checkStart = new Date(startDate)
+        const checkEnd = new Date(endDate)
+
+        if(checkStart>checkEnd){
+            error.push("Starting date can not come after ending date.");
+            setError(error);
+            reset();
+            return;
+        }
+        if(checkStart<today){
+            error.push("Start date can not be in the past.")
+            setError(error);
+            reset();
+            return;
+        }
+
+
+
+        const diffTime = checkEnd.getTime() - checkStart.getTime()
+        const daysTotal = diffTime / (1000 *3600 * 24)
+        let costBook = dock.cost * daysTotal * length
+
         const user_id = sessionUser.id
         const dock_id = dockId
         const newBooking = {
@@ -51,11 +57,9 @@ const MakeBooking = ()=>{
             dock_id,
             startDate,
             endDate,
-            totalCost,
+            totalCost: costBook,
         };
 
-        console.log(`userId.....${user_id}`)
-        console.log(`dockId.....${dock_id}`)
 
         dispatch(createBooking(newBooking))
             .then(()=>history.push(`/account`))
@@ -70,15 +74,16 @@ const MakeBooking = ()=>{
     const reset = () => {
         setStartDate('');
         setEndDate('');
+        setLength('')
     }
 
 
     return (
         <div className='booking-outer-container'>
-            { errorMessages.length>0 && (<div className="errors">
-                <ul>
-                    {errorMessages.map(error => (
-                    <li>{error}</li>
+            { error.length>0 && (<div className="errors">
+                <ul className='bookingErrorList'>
+                    {error.map(errorMess => (
+                    <li key={error.indexOf(errorMess)}>{errorMess}</li>
                     ))}
                 </ul>
             </div>)}
@@ -105,6 +110,17 @@ const MakeBooking = ()=>{
                         onChange={(e) => setEndDate(e.target.value)}
                         required
                     />
+                    <label>
+                    Length of boat ...
+                    </label>
+                    <input
+                        type="integer"
+                        placeholder='In nearest number of feet...'
+                        value={length}
+                        onChange={(e) => setLength(e.target.value)}
+                        required
+                    />
+
                     <button type="submit">Submit</button>
                 </form>
             </div>
