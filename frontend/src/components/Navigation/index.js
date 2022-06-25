@@ -68,7 +68,6 @@ function Navigation({ isLoaded }){
         <NavLink className="loginBtn" to="/login">Log in</NavLink>
         <NavLink className="signupBtn" to="/signup">Sign up</NavLink>
         <NavLink className="hostBtn" to="/login">Start Hosting</NavLink>
-        {/* <button className="hostBtn" type="Submit">Start Hosting</button> */}
       </>
     );
   }
