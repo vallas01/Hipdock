@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { getDocks, updateDockDetails } from '../../../store/dock';
+//eslint-disable-next-line
+import { USStates, CanadaProv, MexicoStates, BahamaStates } from "./listStates"
 import './UpdateDock.css'
 
 function UpdateDock() {
@@ -17,7 +19,7 @@ function UpdateDock() {
     const [address, setAddress] = useState();
     const [city, setCity] = useState();
     const [state, setState] = useState('');
-    const [country, setCountry] = useState('USA');
+    const [country, setCountry] = useState('');
     const [cost, setCost] = useState();
     const [description, setDescription] = useState();
     const [longitude, setLongitude] = useState();
@@ -54,7 +56,7 @@ function UpdateDock() {
         // reset();
     }
 
-   
+
     return (
         <div className='update-container'>
             <div className='update-container1'>
@@ -105,22 +107,63 @@ function UpdateDock() {
                         onChange={(e) => setCity(e.target.value)}
                         required
                     />
-                    <input
-                        type="text"
-                        placeholder='Enter a state or province...'
-                        value={state}
-                        onChange={(e) => setState(e.target.value)}
-                        required
-                    />
-                    <select id="country-state" name="country-state">
+                    <select
+                        className='dropList'
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
-                        <option value='' disabled select >'Select a country...'</option>
-                        <option value="USA">United States</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Bahamas">Bahamas</option>
-                        <option value="Mexico">Mexico</option>
+                    >
+                        <option value='' disabled  >Select a country...</option>
+                        <option value='USA'>United States</option>
+                        <option value='Canada'>Canada</option>
+                        <option value='Bahamas'>Bahamas</option>
+                        <option value='Mexico'>Mexico</option>
                     </select>
+
+                    <select
+                        className='dropList'
+                        value={state}
+                        onChange={(e) => setState(e.target.value)}
+                    >   {/* {StateList = country==="Canada"? StateList=CanadaProv : StateList=USStates} */}
+                        <option value='' disabled  >Select a state...</option>
+                        {country==="Canada" && (
+                            <>
+                                {CanadaProv.map((state, idx) => {
+                                    return (
+                                        <option key={idx} value={state.value}>{state.label}</option>
+                                    )
+                                })}
+                            </>
+                        )}
+                        {country==="USA" && (
+                            <>
+                                {USStates.map((state, idx) => {
+                                    return (
+                                        <option key={idx} value={state.value}>{state.label}</option>
+                                    )
+                                })}
+                            </>
+                        )}
+                        {country==="Bahamas" && (
+                            <>
+                                {BahamaStates.map((state, idx) => {
+                                    return (
+                                        <option key={idx} value={state.value}>{state.label}</option>
+                                    )
+                                })}
+                            </>
+                        )}
+                        {country==="Mexico" && (
+                            <>
+                                {MexicoStates.map((state, idx) => {
+                                    return (
+                                        <option key={idx} value={state.value}>{state.label}</option>
+                                    )
+                                })}
+                            </>
+                        )}
+                    </select>
+
+
                     <input
                         type="text"
                         placeholder='Enter cost...'

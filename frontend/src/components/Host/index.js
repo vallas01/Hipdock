@@ -101,9 +101,11 @@ const Host = () => {
                     onChange={(e) => setState(e.target.value)}
                     required
                 />
-                <select id="country-state" name="country-state">
+                <select
+                    id="country-state"
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
+                >
                     <option value='' disabled select >'Select a country...'</option>
                     <option value="USA">United States</option>
                     <option value="Canada">Canada</option>

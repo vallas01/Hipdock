@@ -19,3 +19,7 @@ li {
     gap: 10px;
     color:#d32323
 }
+
+.dropList {
+  width: 160px;
+}
