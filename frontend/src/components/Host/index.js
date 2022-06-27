@@ -14,7 +14,7 @@ const Host = () => {
     const [address, setAddress] = useState();
     const [city, setCity] = useState();
     const [state, setState] = useState('');
-    const [country, setCountry] = useState('USA');
+    const [country, setCountry] = useState('');
     const [cost, setCost] = useState();
     const [description, setDescription] = useState();
     const [longitude, setLongitude] = useState();
