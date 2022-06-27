@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { getDocks, updateDockDetails } from '../../../store/dock';
-//eslint-disable-next-line
 import { USStates, CanadaProv, MexicoStates, BahamaStates } from "./listStates"
 import './UpdateDock.css'
 
@@ -110,6 +109,7 @@ function UpdateDock() {
                     <select
                         className='dropList'
                         value={country}
+                        required
                         onChange={(e) => setCountry(e.target.value)}
                     >
                         <option value='' disabled  >Select a country...</option>
@@ -122,8 +122,9 @@ function UpdateDock() {
                     <select
                         className='dropList'
                         value={state}
+                        required
                         onChange={(e) => setState(e.target.value)}
-                    >   {/* {StateList = country==="Canada"? StateList=CanadaProv : StateList=USStates} */}
+                    >
                         <option value='' disabled  >Select a state...</option>
                         {country==="Canada" && (
                             <>

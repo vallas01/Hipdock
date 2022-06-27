@@ -1,3 +1,26 @@
+.account-outer-container {
+    display: flex;
+    flex-direction: column;
+}
+.account-ul  {
+    display: flex;
+    justify-content: sp;
+  flex-wrap: wrap
+
+}
+#dockList {
+    margin: 10px;
+    max-width: 90%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.accountHeading1, .accountHeading2 {
+    font-size: large;
+    margin: 50px 20px 0px 200px;
+}
+
 .red-hover:hover {
     background-color: red;
     color: white;
@@ -21,8 +44,8 @@
 }
 
 .notHosting {
+    margin:50px;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%
@@ -31,5 +54,6 @@
 .fa-face-frown {
     margin-top: 30px;
 }
-
-
+.userName {
+    color:red;
+}

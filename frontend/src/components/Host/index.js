@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createDock } from '../../store/dock';
+import { USStates, CanadaProv, MexicoStates, BahamaStates } from "./listStates"
 
 import './Host.css'
 
@@ -94,23 +95,62 @@ const Host = () => {
                     onChange={(e) => setCity(e.target.value)}
                     required
                 />
-                <input
-                    type="text"
-                    placeholder='Enter a state or province...'
-                    value={state}
-                    onChange={(e) => setState(e.target.value)}
-                    required
-                />
                 <select
-                    id="country-state"
+                    className='dropList'
                     value={country}
+                    required
                     onChange={(e) => setCountry(e.target.value)}
                 >
-                    <option value='' disabled select >'Select a country...'</option>
-                    <option value="USA">United States</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Bahamas">Bahamas</option>
-                    <option value="Mexico">Mexico</option>
+                    <option value='' disabled  >Select a country...</option>
+                    <option value='USA'>United States</option>
+                    <option value='Canada'>Canada</option>
+                    <option value='Bahamas'>Bahamas</option>
+                    <option value='Mexico'>Mexico</option>
+                </select>
+
+                <select
+                    className='dropList'
+                    value={state}
+                    required
+                    onChange={(e) => setState(e.target.value)}
+                >
+                <option value='' disabled  >Select a state...</option>
+                    {country==="Canada" && (
+                        <>
+                            {CanadaProv.map((state, idx) => {
+                                return (
+                                    <option key={idx} value={state.value}>{state.label}</option>
+                                )
+                            })}
+                        </>
+                    )}
+                    {country==="USA" && (
+                        <>
+                            {USStates.map((state, idx) => {
+                                return (
+                                    <option key={idx} value={state.value}>{state.label}</option>
+                                )
+                            })}
+                        </>
+                    )}
+                    {country==="Bahamas" && (
+                        <>
+                            {BahamaStates.map((state, idx) => {
+                                return (
+                                    <option key={idx} value={state.value}>{state.label}</option>
+                                )
+                            })}
+                        </>
+                    )}
+                    {country==="Mexico" && (
+                        <>
+                            {MexicoStates.map((state, idx) => {
+                                return (
+                                    <option key={idx} value={state.value}>{state.label}</option>
+                                )
+                            })}
+                        </>
+                    )}
                 </select>
                 <input
                     type="text"
