@@ -71,7 +71,7 @@ function UpdateDock() {
                     <img className='imgDock' src={dock.imagePath} alt='dock' />
                     <div className='dockName'>{dock.name}</div>
                     <div className='dockCityState'>{dock.address}</div>
-                    <div className='dockCityState'>{dock.city},{dock.state}</div>
+                    <div className='dockCityState'>{dock.city}, {dock.state}</div>
                     <div className='dockCityState'>{dock.country}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
                     <div className='dockDescription'>{dock.description}</div>
                     <div className='dockCityState'>latitude:&nbsp;{dock.latitude}</div>

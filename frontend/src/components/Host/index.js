@@ -11,16 +11,16 @@ const Host = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const [errors, setErrors] = useState([]);
-    const [name, setName] = useState()
-    const [address, setAddress] = useState();
-    const [city, setCity] = useState();
+    const [name, setName] = useState('')
+    const [address, setAddress] = useState('');
+    const [city, setCity] = useState('');
     const [state, setState] = useState('');
     const [country, setCountry] = useState('');
-    const [cost, setCost] = useState();
-    const [description, setDescription] = useState();
-    const [longitude, setLongitude] = useState();
-    const [latitude, setLatitude] = useState();
-    const [imagePath, setImagePath] = useState();
+    const [cost, setCost] = useState('');
+    const [description, setDescription] = useState('');
+    const [longitude, setLongitude] = useState('');
+    const [latitude, setLatitude] = useState('');
+    const [imagePath, setImagePath] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
