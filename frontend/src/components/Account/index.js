@@ -51,7 +51,9 @@ const Account = () => {
                             return(
                                 dock.user_id === userId && (
                                     <li className='dockList' key={dock.id} >
-                                            <img className='imgDock' src={dock.imagePath} alt='dock' />
+                                            <div className='image-container'>
+                                                <img className='account-imgDock' src={dock.imagePath} alt='dock' />
+                                            </div>
                                             <div className='dockName'>{dock.name}</div>
                                             <div className='dockDescription'>{dock.description}</div>
                                             <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
@@ -84,8 +86,8 @@ const Account = () => {
                             return(
                                 book.user_id === userId && (
                                     <li className='dockList' key={book.id} >
-                                            <div>
-                                                <img className='imgDock' src={book.Dock?.imagePath} alt='dock' />
+                                            <div className='image-container'>
+                                                <img className='account-imgDock' src={book.Dock?.imagePath} alt='dock' />
                                             </div>
                                             <div className='dockName'>{book.Dock?.name}</div>
                                             <div className='bookDate'>{formatDate(book?.startDate)} :  Arrival Date</div>
