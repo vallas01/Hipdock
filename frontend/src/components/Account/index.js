@@ -31,7 +31,6 @@ const Account = () => {
 
     let foundHost = false;
     let foundBook = false;
-    let dockId = '';
 
     const formatDate = (date) =>{
         let dd = date.split("T").slice(0,1);
@@ -80,16 +79,18 @@ const Account = () => {
                     <ul id='dockList'>
                         {Object.values(bookings).map((book)=>{
                             if (book.user_id === userId) {
-                                dockId = book.dock_id;
                                 foundBook = true;
                             }
                             return(
                                 book.user_id === userId && (
                                     <li className='dockList' key={book.id} >
-                                            <div>DOCK NAME: {book.Dock.name}</div>
-                                            <div className='bookDate'>{formatDate(book.startDate)} :  Arrival Date</div>
-                                            <div className='bookDate'>{formatDate(book.endDate)} : Departure Date</div>
-                                            <div className='dockCityState'>${Math.ceil(book.totalCost)} : Total Booking Fee</div>
+                                            <div>
+                                                <img className='imgDock' src={book.Dock?.imagePath} alt='dock' />
+                                            </div>
+                                            <div className='dockName'>{book.Dock?.name}</div>
+                                            <div className='bookDate'>{formatDate(book?.startDate)} :  Arrival Date</div>
+                                            <div className='bookDate'>{formatDate(book?.endDate)} : Departure Date</div>
+                                            <div className='dockCityState'>${Math.ceil(book?.totalCost)} : Total Booking Fee</div>
                                             <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisBooking(book.id)}>Delete</button>
                                     </li>)
 
@@ -97,18 +98,7 @@ const Account = () => {
 
                             )
                         })}
-                        {Object.values(docks).map((dock)=>{
-                            return(
 
-                                dock.id === dockId && (
-                                    <li className='dockList' key={dock.id} >
-                                        <img className='imgDock' src={dock.imagePath} alt='dock' />
-                                        <div className='dockName'>{dock.name}</div>
-                                        <div className='dockDescription'>{dock.description}</div>
-                                        <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
-                                    </li>)
-                                    )
-                                })}
                     </ul>
                 </div>
 
