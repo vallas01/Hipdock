@@ -30,7 +30,7 @@ const NearMe = () => {
                             </NavLink>
                             <div className='dockName'>{dock.name}</div>
                             <div className='dockDescription'>{dock.description}</div>
-                            <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
+                            <div className='dockCityState'>{dock.city}, {dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
                         </li>
                     )
                 })}
