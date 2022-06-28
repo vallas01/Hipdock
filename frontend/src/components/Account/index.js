@@ -12,6 +12,7 @@ const Account = () => {
     const docks = useSelector(state=> state.dock)
     const bookings = useSelector(state=> state.booking)
 
+
     const deleteThisDock = (id) => {
         dispatch(deleteDock(id))
     }
@@ -32,7 +33,12 @@ const Account = () => {
     let foundBook = false;
     let dockId = '';
 
-    console.log(`dockId: ${dockId}`)
+    const formatDate = (date) =>{
+        let dd = date.split("T").slice(0,1);
+        // let y = date.slice(0,4);
+        // let m = date.slice(6,8);
+        return dd;
+    }
     return (
         <div className='account-outer-container'>
             <div
@@ -80,11 +86,15 @@ const Account = () => {
                             return(
                                 book.user_id === userId && (
                                     <li className='dockList' key={book.id} >
-                                            <div className='dockName'>Arrival: {book.startDate}</div>
-                                            <div className='dockName'>Departure: {book.endDate}</div>
-                                            <div className='dockCityState'><span className="dot"></span>Your total booking fee is ${Math.ceil(book.totalCost)}</div>
+                                            <div>DOCK NAME: {book.Dock.name}</div>
+                                            <div className='bookDate'>{formatDate(book.startDate)} :  Arrival Date</div>
+                                            <div className='bookDate'>{formatDate(book.endDate)} : Departure Date</div>
+                                            <div className='dockCityState'>${Math.ceil(book.totalCost)} : Total Booking Fee</div>
                                             <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisBooking(book.id)}>Delete</button>
                                     </li>)
+
+
+
                             )
                         })}
                         {Object.values(docks).map((dock)=>{

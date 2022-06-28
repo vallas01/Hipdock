@@ -26,7 +26,7 @@ router.post('/', validateDockForm, asyncHandler(async function(req,res){
 
 //get all bookings
 router.get('/', asyncHandler(async function(req, res) {
-  const bookings = await Booking.findAll();
+  const bookings = await Booking.findAll({include: Dock});
   return res.json(bookings);
 }));
 
