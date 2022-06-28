@@ -2,6 +2,7 @@ import './Account.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react';
 import { deleteDock, getDocks } from '../../store/dock';
+import { deleteBooking, getBookings } from '../../store/book'
 import { Link } from 'react-router-dom';
 
 const Account = () => {
@@ -9,14 +10,23 @@ const Account = () => {
     const userId = useSelector(state=>state.session.user.id);
     const userName = useSelector(state=>state.session.user.username);
     const docks = useSelector(state=> state.dock)
+    const bookings = useSelector(state=> state.booking)
 
     const deleteThisDock = (id) => {
         dispatch(deleteDock(id))
     }
 
+    const deleteThisBooking = (id) => {
+        dispatch(deleteBooking(id))
+    }
+
     useEffect(() => {
         dispatch(getDocks())
     }, [dispatch]);
+
+    useEffect(() => {
+        dispatch(getBookings())
+    }, [dispatch])
 
     let foundHost = false;
     let foundBook = false;
@@ -57,12 +67,40 @@ const Account = () => {
                 className='accountHeading2'>The docks <span className='userName'>{userName}</span> has already booked...
             </div>
 
+
+            <div className='account-ul'>
+                    <ul id='dockList'>
+                        {Object.values(bookings).map((book)=>{
+                            if (book.user_id === userId) foundBook = true;
+                            return(
+                                book.user_id === userId && (
+                                    <li className='dockList' key={book.id} >
+                                            <img className='imgDock' src={book.imagePath} alt='dock' />
+                                            <div className='dockName'>{book.name}</div>
+                                            <div className='dockDescription'>{book.description}</div>
+                                            <div className='dockCityState'><span className="dot"></span>Your total booking fee is ${book.totalCost}</div>
+                                            <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisBooking(book.id)}>Delete</button>
+                                    </li>)
+                            )
+                        })}
+                    </ul>
+                </div>
+
+
+
+            <div className='account-dockList'>
+
             {!foundBook && (
                 <div className='notHosting' >
                     <div >NO BOOKINGS YET!</div>
                     <i className="fa-regular fa-face-frown fa-2xl"></i>
                 </div>
             )}
+
+            </div>
+
+
+
         </div>
     )
 }

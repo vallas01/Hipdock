@@ -85,12 +85,11 @@ router.put('/:id(\\d+)', validateDockForm, asyncHandler(async function(req, res)
 }));
 
 
-  //delete a marina
+  //delete a dock
 router.delete('/:id(\\d+)', asyncHandler(async function(req, res) {
 
   const dock = await Dock.findByPk(req.params.id)
   await dock.destroy();
-  // const allMarinas = await Business.findAll();
   return res.json(req.params.id)
 }));
 

@@ -8,15 +8,12 @@ const { User, Dock, Booking } = require('../../db/models');
 
 const router = express.Router();
 
-// const d = new Date();
-// let today = d.toString();
 
 const validateDockForm = [
-    check('startDate')
+    check('endDate')
       .exists({ checkFalsy: true })
       .notEmpty()
-      // .isBefore(today)
-      .withMessage('Please provide a longer name.'),
+      .withMessage('Please provide an end date.'),
       handleValidationErrors,
     ];
 
@@ -26,5 +23,19 @@ router.post('/', validateDockForm, asyncHandler(async function(req,res){
   const newBooking = await Booking.create(req.body);
   return res.json(newBooking)
 }))
+
+//get all bookings
+router.get('/', asyncHandler(async function(req, res) {
+  const bookings = await Booking.findAll();
+  return res.json(bookings);
+}));
+
+//delete a booking
+router.delete('/:id(\\d+)', asyncHandler(async function(req, res) {
+
+  const booking = await Booking.findByPk(req.params.id)
+  await booking.destroy();
+  return res.json(req.params.id)
+}));
 
 module.exports = router;

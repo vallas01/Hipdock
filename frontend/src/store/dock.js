@@ -102,7 +102,6 @@ const dockReducer = (state = initialState, action) => {
     }
 
     case REMOVE_DOCK: {
-      console.log("REDUCER IS HERE", action.id)
       newState = {...state}
       delete newState[action.id]
       return newState
