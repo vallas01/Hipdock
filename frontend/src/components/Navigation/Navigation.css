@@ -52,7 +52,7 @@
     height: 36px;
     font-size: 1rem;
     font-weight: 500;
-    padding: 8px 16px 1px;
+    padding: 9px 16px 0px;
     border-radius: 24px;
     cursor: pointer;
     transition: background 0.3s ease 0s;
