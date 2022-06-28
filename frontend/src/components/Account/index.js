@@ -30,7 +30,9 @@ const Account = () => {
 
     let foundHost = false;
     let foundBook = false;
+    let dockId = '';
 
+    console.log(`dockId: ${dockId}`)
     return (
         <div className='account-outer-container'>
             <div
@@ -71,18 +73,32 @@ const Account = () => {
             <div className='account-ul'>
                     <ul id='dockList'>
                         {Object.values(bookings).map((book)=>{
-                            if (book.user_id === userId) foundBook = true;
+                            if (book.user_id === userId) {
+                                dockId = book.dock_id;
+                                foundBook = true;
+                            }
                             return(
                                 book.user_id === userId && (
                                     <li className='dockList' key={book.id} >
-                                            <img className='imgDock' src={book.imagePath} alt='dock' />
-                                            <div className='dockName'>{book.name}</div>
-                                            <div className='dockDescription'>{book.description}</div>
-                                            <div className='dockCityState'><span className="dot"></span>Your total booking fee is ${book.totalCost}</div>
+                                            <div className='dockName'>Arrival: {book.startDate}</div>
+                                            <div className='dockName'>Departure: {book.endDate}</div>
+                                            <div className='dockCityState'><span className="dot"></span>Your total booking fee is ${Math.ceil(book.totalCost)}</div>
                                             <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisBooking(book.id)}>Delete</button>
                                     </li>)
                             )
                         })}
+                        {Object.values(docks).map((dock)=>{
+                            return(
+
+                                dock.id === dockId && (
+                                    <li className='dockList' key={dock.id} >
+                                        <img className='imgDock' src={dock.imagePath} alt='dock' />
+                                        <div className='dockName'>{dock.name}</div>
+                                        <div className='dockDescription'>{dock.description}</div>
+                                        <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
+                                    </li>)
+                                    )
+                                })}
                     </ul>
                 </div>
 
