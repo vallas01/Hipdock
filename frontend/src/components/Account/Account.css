@@ -1,3 +1,21 @@
+.bookDate {
+    margin-right: 50px;
+    text-align: end;
+}
+
+.bookFee {
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+
+}
+
+.book-dockName {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 5px;
+}
 .image-container {
     height: 205px;
     margin-right: 5px;;
@@ -48,7 +66,7 @@
     font-weight: 600;
 }
 .brown-hover:hover {
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(0,0,0,.2);
     color: black;
     font-weight: 600;
     border: 1px solid black;
@@ -61,6 +79,7 @@
     border: 1px solid black;
     text-decoration: none;
     color: black;
+    background-color: rgba(0,0,0,.1);
 }
 
 .notHosting {

@@ -56,7 +56,7 @@ const Account = () => {
                                             </div>
                                             <div className='dockName'>{dock.name}</div>
                                             <div className='dockDescription'>{dock.description}</div>
-                                            <div className='dockCityState'>{dock.city},{dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
+                                            <div className='dockCityState'>{dock.city}, {dock.state}<span className="dot"></span>${dock.cost}&nbsp;/ foot</div>
                                             <Link className="accountUpDateBtn brown-hover" to={`/docks/${dock.id}`}>UpDate</Link>
                                             <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisDock(dock.id)}>Delete</button>
                                     </li>)
@@ -89,10 +89,10 @@ const Account = () => {
                                             <div className='image-container'>
                                                 <img className='account-imgDock' src={book.Dock?.imagePath} alt='dock' />
                                             </div>
-                                            <div className='dockName'>{book.Dock?.name}</div>
-                                            <div className='bookDate'>{formatDate(book?.startDate)} :  Arrival Date</div>
-                                            <div className='bookDate'>{formatDate(book?.endDate)} : Departure Date</div>
-                                            <div className='dockCityState'>${Math.ceil(book?.totalCost)} : Total Booking Fee</div>
+                                            <div className='book-dockName'>{book.Dock?.name}</div>
+                                            <div className='bookDate'>Arrival Date:  {formatDate(book?.startDate)}</div>
+                                            <div className='bookDate'>Departure Date:  {formatDate(book?.endDate)}</div>
+                                            <div className='bookFee'>Total Booking Fee: ${Math.ceil(book?.totalCost)}</div>
                                             <button className='accountDeleteBtn red-hover' onClick={()=>deleteThisBooking(book.id)}>Delete</button>
                                     </li>)
 
