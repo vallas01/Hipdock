@@ -16,7 +16,7 @@ module.exports = {
           city: 'Honolulu',
           state: 'HA',
           country: 'USA',
-          cost: 2.20,
+          cost: 2.25,
           longitude: -157.86,
           latitude: 21.31,
           description: 'Easy access and a very friendly owner',

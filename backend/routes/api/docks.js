@@ -47,7 +47,7 @@ const validateDockForm = [
     check('longitude')
       .exists({ checkFalsy: true })
       .notEmpty()
-      .isFloat({min: -90, max: 90})
+      .isFloat({min: -180, max: 180})
       .withMessage('Longitude must be between -180 and 180.'),
     check('imagePath')
       .exists({ checkFalsy: true })
