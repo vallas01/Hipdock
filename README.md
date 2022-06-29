@@ -4,3 +4,19 @@ Written by Andrew C. Vallas
 
 
 (Designed for a min screen width of 900px, designs for smaller screen widths are in development.)
+
+
+## Downloading the App
+Clone this repository git clone git@github.com:vallas01/Hipdock.git
+
+Install all packages in both the frontend and backend folders npm install
+
+Create a new .env file in the backend to access the database. Follow the example .env in the backend.
+
+Setup a PSQL user to match your .env file.
+
+Migrate and seed the database using the following script in the backend: npm run reset
+
+Run npm start in both the backend and front end folders.
+
+Navigate your browser to localhost:3000
