@@ -40,9 +40,9 @@ function Navigation({ isLoaded }){
               <img className='logout' src='./favicon.png' alt="logo"></img>
             </button>
             <div className="dropdown-content">
-              <a href="/account">My Account</a>
-              <a href="/about">About</a>
-              <a onClick={logout} href='/'>Log out</a>
+              <NavLink className="navBtn" to="/account">My Account</NavLink>
+              <NavLink className="navBtn" to="/about">About me</NavLink>
+              <NavLink onClick={logout} className="navBtn" to="/">Log out</NavLink>
             </div>
         </div>
       </>
@@ -57,12 +57,11 @@ function Navigation({ isLoaded }){
                 About
               </button>
               <div className="dropdown-content">
-                <a href="/elevator">About Hipdock</a>
-                <a href="/about">About me</a>
+                <NavLink className="navBtn" to="/elevator">About Hipdock</NavLink>
+                <NavLink className="navBtn" to="/about">About me</NavLink>
                 {/* TODO Add a page listing your values */}
-                {/* <a href="/">My values</a> */}
-                <a href="/technology">Technologies</a>
-                <a href="/contact">Contact info</a>
+                <NavLink className="navBtn" to="/technology">Technologies</NavLink>
+                <NavLink className="navBtn" to="/contact">Contact info</NavLink>
               </div>
         </div>
 
