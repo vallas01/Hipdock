@@ -3,15 +3,19 @@
 
 <p align="center">
 Written by Andrew C. Vallas
+</p>
 
+<p align="center">
 (Designed for a min screen width of 900px, designs for smaller screen widths are in development.)
+</p>
 
-https://Hipdock.herokuapp.com "Hipdock Live Link"
+<p align="center">
+(https://Hipdock.herokuapp.com "Hipdock Live Link")
 </p>
 
 
 ## Downloading the App
-Clone this repository git clone git@github.com:vallas01/Hipdock.git
+Clone this repository using "git clone git@github.com:vallas01/Hipdock.git"
 
 Install all packages in both the frontend and backend folders:  npm install
 
