@@ -187,7 +187,7 @@ const Host = () => {
                     onChange={(e) => setImagePath(e.target.value)}
                     required
                 />
-                <button type="submit">Submit</button>
+                <button className='hostSubmit' type="submit">Submit</button>
             </form>
         </div>
 

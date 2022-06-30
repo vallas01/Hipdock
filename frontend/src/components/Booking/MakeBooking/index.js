@@ -153,7 +153,7 @@ const MakeBooking = ()=>{
                         required
                     />
 
-                    <button type="submit">Submit</button>
+                    <button className="bookSubmit" type="submit">Submit</button>
                 </form>
 
             </div>
