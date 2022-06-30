@@ -61,7 +61,6 @@ export const updateDockDetails = (dockDetails) => async dispatch => {
 };
 
 export const deleteDock = (dockId) => async dispatch => {
-  console.log(dockId)
   const response = await csrfFetch(`/api/docks/${dockId}`, {
     method: 'DELETE',
     body: JSON.stringify({dockId})
