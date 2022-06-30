@@ -4,14 +4,21 @@
 <p align="center">
 Written by Andrew C. Vallas
 </p>
-
+<p align="center">
+https://Hipdock.herokuapp.com (live link)
+</p>
 <p align="center">
 (Designed for a min screen width of 900px, designs for smaller screen widths are in development.)
 </p>
-
+<p align="center"> ------------------- </p>
 <p align="center">
-(https://Hipdock.herokuapp.com "Hipdock Live Link")
+This app helps unite the boating community by connecting boaters with home owners and businesses willing to rent a dock space.
 </p>
+<ol>
+  <li>Users can host a dock space and charge boaters per day based on boat length.</li>
+  <li>Users can also book a dock space and see their total cost.</li>
+</ol>
+<p align="center">(After login, click on the anchor to see your account.)</p>
 
 
 ## Downloading the App

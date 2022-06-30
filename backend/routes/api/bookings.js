@@ -19,7 +19,6 @@ const validateDockForm = [
 
 //create a booking
 router.post('/', validateDockForm, asyncHandler(async function(req,res){
-  console.log(`********${req.body}`)
   const newBooking = await Booking.create(req.body);
   return res.json(newBooking)
 }))
