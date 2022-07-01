@@ -19,6 +19,7 @@ This app helps unite the boating community by connecting boaters with home owner
   <li>Users can also book a dock space and see their total cost.</li>
 </ol>
 <p align="center">(After login, click on the anchor to see your account.)</p>
+<p align='center'>test image: https://img.marinas.com/v2/636c8ef839d2b3d4c1a4f224644317359e99bbe7a86bbdb6b9136ab5389dc09c.jpg</p>
 
 
 ## Downloading the App
