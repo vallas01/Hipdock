@@ -200,7 +200,7 @@ function UpdateDock() {
                         onChange={(e) => setImagePath(e.target.value)}
                         required
                     />
-                    <button type="submit">Submit</button>
+                    <button className='dockSubmit' type="submit">Submit</button>
                 </form>
 
             </div>
